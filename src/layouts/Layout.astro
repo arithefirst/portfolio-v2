@@ -29,17 +29,19 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
   <body>
     <div class="flex h-screen">
       <div class="bg-mantle flex flex-col items-center md:w-1/2 lg:w-[500px]">
-        <Image src={Miku} alt="Hatsune Miku" class="mx-auto mt-42 w-2/3 rounded-full shadow-lg" />
-        <h1 class="mt-7 w-full text-center text-5xl">Hi, I'm <span class="font-bold">April Hall</span></h1>
-        <hr class="border-subtext-0 mx-auto mt-4 w-3/5 border-t" />
-        <h2 class="font-roboto mx-auto mt-4 text-center font-extralight">
-          Your friendly neighborhood fullstack developer
-        </h2>
-        <div class="bg-base mt-28 flex h-10 w-48 items-center justify-center gap-2 rounded-full">
-          <Link href="https://discord.com/users/613358761901424652"><Discord /></Link>
-          <Link href="https://github.com/arithefirst"><GitHub /></Link>
-          <Link href="mailto:ari@arithefirst.com"><Mail /></Link>
-          <Link><Terminal /></Link>
+        <div class="my-auto h-fit w-full">
+          <Image src={Miku} alt="Hatsune Miku" class="mx-auto w-2/3 rounded-full shadow-lg" />
+          <h1 class="mt-7 w-full text-center text-5xl">Hi, I'm <span class="font-bold">April Hall</span></h1>
+          <hr class="border-subtext-0 mx-auto mt-4 w-3/5 border-t" />
+          <h2 class="font-roboto mx-auto mt-4 text-center font-extralight">
+            Your friendly neighborhood fullstack developer
+          </h2>
+          <div class="bg-base mx-auto mt-28 flex h-10 w-48 items-center justify-center gap-2 rounded-full">
+            <Link href="https://discord.com/users/613358761901424652"><Discord /></Link>
+            <Link href="https://github.com/arithefirst"><GitHub /></Link>
+            <Link href="mailto:ari@arithefirst.com"><Mail /></Link>
+            <Link><Terminal /></Link>
+          </div>
         </div>
       </div>
       <slot />
