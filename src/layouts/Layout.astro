@@ -13,7 +13,9 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
     <title>arithefirst{pageTitle ? ` | ${pageTitle}` : ''}</title>
   </head>
   <body>
-    <slot />
+    <div class="flex">
+      <slot />
+    </div>
   </body>
 </html>
 
