@@ -12,7 +12,7 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="m-0 h-full w-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -26,7 +26,7 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="m-0 h-full w-full">
     <div class="flex h-screen">
       <div class="bg-mantle flex flex-col items-center md:w-1/2 lg:w-[500px]">
         <div class="my-auto h-fit w-full">
@@ -48,12 +48,3 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
     </div>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
