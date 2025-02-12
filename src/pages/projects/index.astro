@@ -1,0 +1,21 @@
+---
+import Layout from '$lib/layouts/Layout.astro';
+import Projects from '$lib/layouts/Projects.svelte';
+
+const projectArray = Array(5).fill({
+  title: 'Shibedrill.site',
+  description: 'A Custom-built blog site for ShibeDrill',
+  src: 'https://www.shibedrill.site/cheesecake.png',
+  alt: 'Cheesecake, the harbinger of the end times',
+  badges: ['AstroJS', 'DaisyUI', 'TailwindCSS', 'Vercel'],
+});
+---
+
+<Layout>
+  <div class="w-full p-8">
+    <h1 class="mb-4 text-4xl font-bold">Projects</h1>
+    <div class="grid w-full grid-cols-2 gap-2">
+      <Projects projects={projectArray} />
+    </div>
+  </div>
+</Layout>
