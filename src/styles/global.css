@@ -1,1 +1,26 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+  /* Catppuccin Colors */
+  --color-mauve: #cba6f7;
+  --color-text: #cdd6f4;
+  --color-subtext-1: #bac2de;
+  --color-subtext-0: #a6adc8;
+  --color-overlay2: #9399b2;
+  --color-overlay1: #7f849c;
+  --color-overlay0: #6c7086;
+  --color-surface2: #585b70;
+  --color-surface1: #45475a;
+  --color-surface0: #313244;
+  --color-base: #1e1e2e;
+  --color-mantle: #181825;
+  --color-crust: #11111b;
+
+  /* Other Config */
+  --font-sans: Inter, sans-serif;
+  --font-roboto: Roboto;
+}
+
+html {
+  @apply text-text bg-base;
+}
