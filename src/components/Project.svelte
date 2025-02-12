@@ -13,7 +13,7 @@
 
 <a
   class="bg-mantle flex h-48 w-full rounded-xl shadow-md transition-all duration-100 hover:scale-[1.01]"
-  href={`/projects/${path}`}
+  href="projects/{path}"
 >
   <img class="bg-crust aspect-square w-48 rounded-l-xl object-cover" {src} {alt} />
   <div class="flex-grow rounded-r-xl p-4">
