@@ -7,6 +7,7 @@ import Discord from '$lib/icons/discord.astro';
 import GitHub from '$lib/icons/github.astro';
 import Mail from '$lib/icons/mail.astro';
 import Terminal from '$lib/icons/terminal.astro';
+import SidebarText from '$lib/layouts/SidebarText.svelte';
 
 const { pageTitle }: { pageTitle?: string } = Astro.props;
 ---
@@ -31,11 +32,7 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
       <div class="bg-mantle flex w-1/2 w-2/7 min-w-[380px] items-center">
         <div class="my-auto h-fit w-full scale-[0.9] 2xl:scale-100">
           <Image src={Miku} alt="Hatsune Miku" class="mx-auto w-2/3 rounded-full shadow-lg" />
-          <h1 class="mt-7 w-full text-center text-5xl">Hi, I'm <span class="font-bold">April Hall</span></h1>
-          <hr class="border-subtext-0 mx-auto mt-4 w-2/3 border 2xl:border-t" />
-          <h2 class="font-roboto mx-auto mt-4 text-center font-extralight">
-            Your friendly neighborhood fullstack developer
-          </h2>
+          <SidebarText client:load />
           <div class="bg-base mx-auto mt-28 flex h-10 w-48 items-center justify-center gap-2 rounded-full">
             <Link href="https://discord.com/users/613358761901424652"><Discord /></Link>
             <Link href="https://github.com/arithefirst"><GitHub /></Link>
