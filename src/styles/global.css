@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 @import './shadcn.css';
-@config '../tailwind.config.ts';
+@config '../../tailwind.config.ts';
 
 @theme {
   /* Catppuccin Colors */
