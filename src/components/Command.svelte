@@ -8,6 +8,7 @@
 
   import { onMount } from 'svelte';
   import * as Command from '$lib/components/ui/command/index.js';
+  import CommandElement from './CommandElement.svelte';
 
   let open = $state(false);
 
@@ -31,36 +32,33 @@
   <Command.List>
     <Command.Empty>No results found.</Command.Empty>
     <Command.Group heading="Suggestions">
-      <Command.Item>
+      <CommandElement href="#" bind:open>
         <Calendar />
         <span>Calendar</span>
-      </Command.Item>
-      <Command.Item>
+      </CommandElement>
+      <CommandElement href="#" bind:open>
         <Smile />
         <span>Search Emoji</span>
-      </Command.Item>
-      <Command.Item>
+      </CommandElement>
+      <CommandElement href="#" bind:open>
         <Calculator />
         <span>Calculator</span>
-      </Command.Item>
+      </CommandElement>
     </Command.Group>
     <Command.Separator />
     <Command.Group heading="Settings">
-      <Command.Item>
+      <CommandElement href="#" bind:open>
         <User />
         <span>Profile</span>
-        <Command.Shortcut>⌘P</Command.Shortcut>
-      </Command.Item>
-      <Command.Item>
+      </CommandElement>
+      <CommandElement href="#" bind:open>
         <CreditCard />
         <span>Billing</span>
-        <Command.Shortcut>⌘B</Command.Shortcut>
-      </Command.Item>
-      <Command.Item>
+      </CommandElement>
+      <CommandElement href="#" bind:open>
         <Settings />
         <span>Settings</span>
-        <Command.Shortcut>⌘S</Command.Shortcut>
-      </Command.Item>
+      </CommandElement>
     </Command.Group>
   </Command.List>
 </Command.Dialog>
