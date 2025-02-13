@@ -1,5 +1,8 @@
 ---
 import Layout from '$lib/layouts/Layout.astro';
+import Command from '$lib/components/Command.svelte';
 ---
 
-<Layout />
+<Layout>
+  <Command client:load />
+</Layout>
