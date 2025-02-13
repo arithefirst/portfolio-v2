@@ -44,7 +44,9 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
           </div>
         </div>
       </div>
-      <slot />
+      <div class="size-full overflow-x-scroll">
+        <slot />
+      </div>
     </div>
   </body>
 </html>
