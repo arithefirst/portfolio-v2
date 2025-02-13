@@ -2,13 +2,29 @@
 import Layout from '$lib/layouts/Layout.astro';
 import Projects from '$lib/layouts/Projects.svelte';
 
-const projectArray = Array(5).fill({
-  title: 'Shibedrill.site',
-  description: 'A Custom-built blog site for ShibeDrill',
-  src: 'https://www.shibedrill.site/cheesecake.png',
-  alt: 'Cheesecake, the harbinger of the end times',
-  badges: ['AstroJS', 'DaisyUI', 'TailwindCSS', 'Vercel'],
-});
+const projectArray = [
+  {
+    title: 'Shibedrill.site',
+    description: 'A Custom-built blog site for ShibeDrill',
+    src: 'https://www.shibedrill.site/cheesecake.png',
+    alt: 'Cheesecake, the harbinger of the end times',
+    badges: ['AstroJS', 'DaisyUI', 'TailwindCSS', 'Vercel'],
+  },
+  {
+    title: 'Lockbox',
+    description: 'A password protected dropbox where users given a password can upload a file',
+    src: '/images/lockbox.svg',
+    alt: 'Lockbox Logo',
+    badges: ['DaisyUI', 'Docker', 'SvelteKit', 'TailwindCSS', 'TypeScript'],
+  },
+  {
+    title: 'SVChat',
+    description: 'A simple chat application built in SvelteKit',
+    src: '/images/svchat.svg',
+    alt: '',
+    badges: ['Cassandra', 'SQLite', 'SvelteKit', 'TailwindCSS', 'TypeScript'],
+  },
+];
 ---
 
 <Layout>
