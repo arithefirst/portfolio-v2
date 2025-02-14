@@ -1,13 +1,12 @@
 <script lang="ts">
-  import Calculator from 'lucide-svelte/icons/calculator';
-  import Calendar from 'lucide-svelte/icons/calendar';
+  import Page from '$lib/icons/page.svelte';
+  import { pages } from '$lib/scripts/pages';
   import CreditCard from 'lucide-svelte/icons/credit-card';
   import Settings from 'lucide-svelte/icons/settings';
-  import Smile from 'lucide-svelte/icons/smile';
   import User from 'lucide-svelte/icons/user';
 
-  import { onMount } from 'svelte';
   import * as Command from '$lib/components/ui/command/index.js';
+  import { onMount } from 'svelte';
   import CommandElement from './CommandElement.svelte';
 
   let open = $state(false);
@@ -31,22 +30,16 @@
   <Command.Input placeholder="Type a command or search..." />
   <Command.List>
     <Command.Empty>No results found.</Command.Empty>
-    <Command.Group heading="Suggestions">
-      <CommandElement href="#" bind:open>
-        <Calendar />
-        <span>Calendar</span>
-      </CommandElement>
-      <CommandElement href="#" bind:open>
-        <Smile />
-        <span>Search Emoji</span>
-      </CommandElement>
-      <CommandElement href="#" bind:open>
-        <Calculator />
-        <span>Calculator</span>
-      </CommandElement>
+    <Command.Group heading="Pages">
+      {#each pages as item}
+        <CommandElement href={item.href} bind:open defaultTarget>
+          <Page />
+          <span>{item.title}</span>
+        </CommandElement>
+      {/each}
     </Command.Group>
     <Command.Separator />
-    <Command.Group heading="Settings">
+    <Command.Group heading="Links">
       <CommandElement href="#" bind:open>
         <User />
         <span>Profile</span>
