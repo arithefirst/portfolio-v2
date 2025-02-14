@@ -1,9 +1,7 @@
 <script lang="ts">
   import Page from '$lib/icons/page.svelte';
+  import { links } from '$lib/scripts/links';
   import { pages } from '$lib/scripts/pages';
-  import CreditCard from 'lucide-svelte/icons/credit-card';
-  import Settings from 'lucide-svelte/icons/settings';
-  import User from 'lucide-svelte/icons/user';
 
   import * as Command from '$lib/components/ui/command/index.js';
   import { onMount } from 'svelte';
@@ -40,18 +38,12 @@
     </Command.Group>
     <Command.Separator />
     <Command.Group heading="Links">
-      <CommandElement href="#" bind:open>
-        <User />
-        <span>Profile</span>
-      </CommandElement>
-      <CommandElement href="#" bind:open>
-        <CreditCard />
-        <span>Billing</span>
-      </CommandElement>
-      <CommandElement href="#" bind:open>
-        <Settings />
-        <span>Settings</span>
-      </CommandElement>
+      {#each links as link}
+        <CommandElement href={link.href} bind:open>
+          <link.icon />
+          <span>{link.title}</span>
+        </CommandElement>
+      {/each}
     </Command.Group>
   </Command.List>
 </Command.Dialog>
