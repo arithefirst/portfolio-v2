@@ -1,10 +1,9 @@
 @import 'tailwindcss';
-@import './shadcn.css';
-@config '../../tailwind.config.ts';
 
 @theme {
   /* Catppuccin Colors */
   --color-mauve: #cba6f7;
+  --color-red: #f38ba8;
   --color-text: #cdd6f4;
   --color-subtext-1: #bac2de;
   --color-subtext-0: #a6adc8;
@@ -18,9 +17,43 @@
   --color-mantle: #181825;
   --color-crust: #11111b;
 
-  /* Other Config */
+  /* Fonts */
   --font-sans: Inter, sans-serif;
   --font-roboto: Roboto;
+
+  /* Shadcn */
+  --color-border: var(--color-surface-1);
+  --color-input: var(--color-surface-1);
+  --color-ring: var(--color-text);
+  --color-background: var(--color-base);
+  --color-foreground: var(--color-text);
+  --color-primary: var(--color-mauve);
+  --color-primary-foreground: var(--color-base);
+  --color-secondary: var(--color-surface-0);
+  --color-secondary-foreground: var(--color-text);
+  --color-accent: var(--color-surface-0);
+  --color-accent-foreground: var(--color-text);
+  --color-destructive: var(--color-red);
+  --color-destructive-foreground: var(--color-mantle);
+  --color-muted: var(--color-surface-0);
+  --color-muted-foreground: var(--color-subtext-1);
+  --color-popover: var(--color-base);
+  --color-popover-foreground: var(--color-text);
+  --color-card: var(--color-base);
+  --color-card-foreground: var(--color-text);
+
+  /* Animations */
+  --animate-blur: blur 15s linear infinite;
+
+  @keyframes blur {
+    0% {
+      filter: 'blur(0px)';
+    }
+    ,
+    100% {
+      filter: 'blur(100px)';
+    }
+  }
 }
 
 html {
