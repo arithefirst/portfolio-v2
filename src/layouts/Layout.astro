@@ -7,8 +7,8 @@ import Terminal from '$lib/icons/terminal.svelte';
 import Miku from '$lib/images/miku.png';
 
 import Command from '$lib/components/Command.svelte';
-import SidebarText from '$lib/layouts/SidebarText.svelte';
 import PromptTriggerButton from '$lib/components/PromptTriggerButton.svelte';
+import SidebarText from '$lib/layouts/SidebarText.svelte';
 import '$lib/styles/global.css';
 import { Image } from 'astro:assets';
 
@@ -45,7 +45,7 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
           </div>
         </div>
       </div>
-      <div class="size-full overflow-x-scroll">
+      <div class="relative size-full overflow-x-scroll">
         <slot />
       </div>
     </div>

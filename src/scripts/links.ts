@@ -7,6 +7,7 @@ import Discord from '$lib/icons/discord.svelte';
 import Mail from '$lib/icons/mail.svelte';
 import GitHub from '$lib/icons/github.svelte';
 import Instagram from '$lib/icons/instagram.svelte';
+import FileCert from '$lib/icons/file_cert.svelte';
 import Signal from '$lib/icons/signal.svelte';
 import Spotify from '$lib/icons/spotify.svelte';
 import Steam from '$lib/icons/steam.svelte';
@@ -48,6 +49,12 @@ export const links: Link[] = [
     title: 'Instagram',
     href: 'https://www.instagram.com/_arithefirst_/',
     icon: Instagram,
+  },
+  {
+    title: 'PGP Public Key',
+    href: '/pgp-pubkey',
+    icon: FileCert,
+    overrideTarget: true,
   },
   {
     title: 'Signal',

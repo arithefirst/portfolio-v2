@@ -39,7 +39,7 @@
     <Command.Separator />
     <Command.Group heading="Links">
       {#each links as link}
-        <CommandElement href={link.href} bind:open>
+        <CommandElement href={link.href} bind:open defaultTarget={link.overrideTarget ?? false}>
           <link.icon />
           <span>{link.title}</span>
         </CommandElement>
