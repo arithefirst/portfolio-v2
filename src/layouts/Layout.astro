@@ -8,6 +8,7 @@ import Miku from '$lib/images/miku.png';
 
 import Command from '$lib/components/Command.svelte';
 import SidebarText from '$lib/layouts/SidebarText.svelte';
+import PromptTriggerButton from '$lib/components/PromptTriggerButton.svelte';
 import '$lib/styles/global.css';
 import { Image } from 'astro:assets';
 
@@ -40,7 +41,7 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
             <Link href="https://discord.com/users/613358761901424652"><Discord /></Link>
             <Link href="https://github.com/arithefirst"><GitHub /></Link>
             <Link href="mailto:ari@arithefirst.com"><Mail /></Link>
-            <Link><Terminal /></Link>
+            <PromptTriggerButton client:load class="w-fit"><Terminal /></PromptTriggerButton>
           </div>
         </div>
       </div>
