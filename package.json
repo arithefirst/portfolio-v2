@@ -26,8 +26,7 @@
     "prettier-plugin-svelte": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwind-merge": "^3.0.1",
-    "tailwind-variants": "^0.3.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwind-variants": "^0.3.1"
   },
   "dependencies": {
     "@astrojs/svelte": "^7.0.4",
