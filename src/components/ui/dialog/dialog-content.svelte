@@ -18,7 +18,7 @@
 </script>
 
 <Dialog.Portal {...portalProps}>
-  <Dialog.Overlay />
+  <Dialog.Overlay class="bg-crust/80" />
   <DialogPrimitive.Content
     bind:ref
     class={cn(
