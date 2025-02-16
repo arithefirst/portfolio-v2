@@ -12,6 +12,10 @@
   let { href, open = $bindable(), defaultTarget = false, children }: Props = $props();
 </script>
 
-<LinkItem {href} target={defaultTarget ? '' : '_blank'} rel="noreferrer noopener" onclick={() => (open = !open)}
-  >{@render children()}</LinkItem
+<LinkItem
+  class="cursor-pointer"
+  {href}
+  target={defaultTarget ? '' : '_blank'}
+  rel="noreferrer noopener"
+  onclick={() => (open = !open)}>{@render children()}</LinkItem
 >
