@@ -14,11 +14,11 @@
 </script>
 
 <a
-  class="bg-mantle flex h-48 w-full min-w-128 rounded-xl shadow-md transition-all duration-100 hover:scale-[1.01]"
+  class="bg-mantle flex h-fit min-h-48 w-full rounded-xl shadow-md transition-all duration-100 hover:scale-[1.01] md:min-w-128"
   href="projects/{path}"
   in:blur={{ delay: delay + 100, duration: 400 }}
 >
-  <img class="bg-crust aspect-square w-48 rounded-l-xl object-cover" {src} {alt} />
+  <img class="bg-crust hidden aspect-square w-48 rounded-l-xl object-cover md:inline" {src} {alt} />
   <div class="flex-grow rounded-r-xl p-4">
     <h1 class="text-2xl font-bold">{title}</h1>
     <p class="text-subtext-0 font-roboto text-wrap">{description}</p>
