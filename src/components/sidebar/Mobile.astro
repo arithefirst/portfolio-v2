@@ -4,7 +4,7 @@ import Miku from '$lib/images/miku.png';
 import { Image } from 'astro:assets';
 ---
 
-<div class="bg-mantle flex h-1/5 flex-col items-center justify-center p-4 shadow-2xl md:hidden">
+<nav class="bg-mantle flex h-1/5 flex-col items-center justify-center p-4 shadow-2xl md:hidden">
   <div class="flex items-center justify-center">
     <Image src={Miku} alt="Hatsune Miku" class="h-16 w-16 rounded-full shadow-lg" loading="eager" />
     <hr class="border-subtext-0 mx-2 h-3/4 border-l-1" />
@@ -17,4 +17,4 @@ import { Image } from 'astro:assets';
     </div>
   </div>
   <Buttons class="mt-2 scale-75" />
-</div>
+</nav>
