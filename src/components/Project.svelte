@@ -1,19 +1,22 @@
 <script lang="ts">
+  import { blur } from 'svelte/transition';
   interface Props {
     src: string;
     alt: string;
     title: string;
     description: string;
     badges?: string[];
+    delay: number;
   }
 
-  const { src, alt, title, description, badges }: Props = $props();
+  const { src, alt, title, description, badges, delay }: Props = $props();
   const path = title.replaceAll(/[._+ ]/gm, '-').toLowerCase();
 </script>
 
 <a
   class="bg-mantle flex h-48 w-full min-w-128 rounded-xl shadow-md transition-all duration-100 hover:scale-[1.01]"
   href="projects/{path}"
+  in:blur={{ delay: delay + 100, duration: 400 }}
 >
   <img class="bg-crust aspect-square w-48 rounded-l-xl object-cover" {src} {alt} />
   <div class="flex-grow rounded-r-xl p-4">
