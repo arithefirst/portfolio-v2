@@ -32,7 +32,7 @@
     forceMount
     bind:ref
     class={cn(
-      'bg-background animate-blur  border-surface-1 fixed top-[50%] left-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border p-6 shadow-lg duration-200 sm:rounded-lg',
+      'bg-background animate-blur border-surface-1 fixed top-[50%] left-[50%] z-50 grid w-11/12 max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 md:w-full',
       className,
     )}
     {...restProps}
