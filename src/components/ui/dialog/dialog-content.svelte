@@ -22,7 +22,7 @@
   <Dialog.Overlay forceMount class="bg-crust/80">
     {#snippet child({ props, open })}
       {#if open}
-        <div {...props} transition:blur={{ duration: 200 }}>
+        <div {...props} transition:blur={{ duration: 300 }}>
           <!-- ... -->
         </div>
       {/if}
@@ -39,7 +39,7 @@
   >
     {#snippet child({ props, open })}
       {#if open}
-        <div {...props} transition:blur={{ duration: 200 }}>
+        <div {...props} transition:blur={{ duration: 300 }}>
           {@render children?.()}
         </div>
       {/if}
