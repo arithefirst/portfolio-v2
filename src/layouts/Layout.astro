@@ -27,7 +27,7 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
     <div class="flex h-screen flex-col md:flex-row">
       <Desktop />
       <Mobile />
-      <div class="bg-topography relative size-full overflow-x-scroll">
+      <div class="bg-topography relative size-full overflow-y-scroll">
         <slot />
       </div>
     </div>
