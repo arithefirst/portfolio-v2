@@ -19,7 +19,7 @@
 </script>
 
 <Dialog.Portal {...portalProps}>
-  <Dialog.Overlay forceMount class="bg-crust/80">
+  <Dialog.Overlay forceMount class="bg-crust/80 backdrop-blur-xs">
     {#snippet child({ props, open })}
       {#if open}
         <div {...props} transition:blur={{ duration: 300 }}>
