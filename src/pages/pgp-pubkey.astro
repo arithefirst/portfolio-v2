@@ -7,11 +7,12 @@ import CopyButton from '$lib/components/copyButton.svelte';
 ---
 
 <Layout>
-  <div class="abs-center font-code w-fit">
+  <div class="md:abs-center font-code mx-auto h-fit w-11/12 overflow-y-scroll px-2 py-4 md:w-fit md:p-0">
     <h1 class="mb-1 w-full pl-1">pgp_public_key.asc</h1>
-    <pre class="bg-mantle border-border size-fit rounded-md border p-4"><Pubkey.Content /></pre>
-    <div class="flex gap-3">
-      <Button class="align-center mt-3 flex w-full justify-center" variant="outline" href="/pgp_public_key.asc">
+    <pre
+      class="bg-mantle border-border h-fit w-full rounded-md border p-4 text-wrap break-words md:size-fit"><Pubkey.Content /></pre>
+    <div class="flex flex-col gap-1 md:flex-row md:gap-3">
+      <Button class="align-center mt-2 flex w-full justify-center md:mt-3" variant="outline" href="/pgp_public_key.asc">
         <Download />
         <span>Download</span>
       </Button>

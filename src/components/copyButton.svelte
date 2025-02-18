@@ -11,7 +11,11 @@
   }
 </script>
 
-<Button class="align-center mt-3 flex w-full cursor-pointer justify-center" variant="outline" onclick={copyText}>
+<Button
+  class="align-center mt-2 flex w-full cursor-pointer justify-center md:mt-3"
+  variant="outline"
+  onclick={copyText}
+>
   <Clipboard />
   <span>Copy</span>
 </Button>
