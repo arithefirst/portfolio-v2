@@ -19,10 +19,10 @@
 </script>
 
 <div
-  class="bg-mantle grid grid-cols-[192px_1fr] items-center rounded-xl shadow-lg"
+  class="bg-mantle grid items-center rounded-xl shadow-lg md:grid-cols-[192px_1fr]"
   in:blur={{ delay: delay + 100, duration: 400 }}
 >
-  <div class="bg-crust mr-6 size-full overflow-hidden rounded-l-xl">
+  <div class="bg-crust mr-6 hidden size-full overflow-hidden rounded-l-xl md:block">
     <img {src} {alt} />
   </div>
   <div class="p-3">
