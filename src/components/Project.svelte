@@ -14,14 +14,14 @@
 </script>
 
 <a
-  class="bg-mantle grid h-fit min-h-48 w-full grid-cols-[192px_1fr] rounded-xl shadow-md transition-all duration-100 hover:scale-[1.01] md:min-w-128"
+  class="bg-mantle grid h-fit min-h-48 w-full rounded-xl shadow-md transition-all duration-100 hover:scale-[1.01] md:min-w-128 md:grid-cols-[192px_1fr]"
   href="projects/{path}"
   in:blur={{ delay: delay + 100, duration: 400 }}
 >
   <img class="bg-crust hidden size-full rounded-l-xl object-cover md:inline" {src} {alt} />
-  <div class="flex-grow rounded-r-xl p-4">
+  <div class="w-full rounded-r-xl p-4 md:w-auto md:flex-grow">
     <h1 class="text-2xl font-bold">{title}</h1>
-    <p class="text-subtext-0 font-roboto text-wrap">{description}</p>
+    <p class="text-subtext-0 font-roboto mt-1 text-wrap">{description}</p>
     {#if badges}
       <div class="flex w-11/12 flex-wrap gap-2 pt-2">
         {#each badges as item}
