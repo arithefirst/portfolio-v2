@@ -1,0 +1,31 @@
+---
+import Layout from '$lib/layouts/Layout.astro';
+import Experiences from '$lib/layouts/Experiences.svelte';
+
+interface ExperienceCard {
+  startDate: Date;
+  endDate: Date | 'Current';
+  company: string;
+  position: string;
+  bullets: string[];
+  src: string;
+  alt: string;
+}
+
+const projectArray = Array.from({ length: 3 }, () => ({
+  startDate: new Date('April 2009'),
+  endDate: new Date(),
+  company: 'Google LLC',
+  position: 'Frontend Engineer',
+  bullets: Array(3).fill('Lorem ipsum dolor sit amet, consectetur adipiscing elit'),
+  src: '/favicon.svg',
+  alt: 'Svetle icon',
+}));
+---
+
+<Layout>
+  <div class="w-full p-8">
+    <h1 class="mb-4 text-4xl font-bold">Experience</h1>
+    <Experiences cards={projectArray} client:load />
+  </div>
+</Layout>
