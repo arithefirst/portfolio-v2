@@ -4,7 +4,7 @@ import Experiences from '$lib/layouts/Experiences.svelte';
 
 interface ExperienceCard {
   startDate: Date;
-  endDate: Date | 'Current';
+  endDate: Date;
   company: string;
   position: string;
   bullets: string[];
@@ -12,7 +12,7 @@ interface ExperienceCard {
   alt: string;
 }
 
-const projectArray = Array.from({ length: 3 }, () => ({
+const projectArray: ExperienceCard[] = Array.from({ length: 3 }, () => ({
   startDate: new Date('April 2009'),
   endDate: new Date(),
   company: 'Google LLC',

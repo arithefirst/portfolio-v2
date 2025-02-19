@@ -3,7 +3,7 @@
 
   interface Props {
     startDate: Date;
-    endDate: Date | 'Current';
+    endDate: Date;
     company: string;
     position: string;
     bullets: string[];
@@ -14,6 +14,8 @@
 
   const { startDate, endDate, company, position, bullets, src, alt, delay }: Props = $props();
   const dateOpts: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short' };
+  const startDateShort = startDate.toLocaleDateString('en-US', dateOpts);
+  const endDateShort = endDate.toLocaleDateString('en-US', dateOpts);
 </script>
 
 <div
@@ -27,7 +29,8 @@
     <p class="text-sm text-gray-400 italic">{position}</p>
     <h3 class="text-xl font-bold">{company}</h3>
     <p class="text-gray-400">
-      {startDate.toLocaleString('en-US', dateOpts)} - {endDate.toLocaleString('en-US', dateOpts)}
+      {startDateShort} -
+      {endDateShort === new Date().toLocaleDateString('en-US', dateOpts) ? 'Present' : endDateShort}
     </p>
     <ul class="mt-2 list-inside list-disc text-sm text-gray-300">
       {#each bullets as bullet}
