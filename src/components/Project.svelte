@@ -14,7 +14,7 @@
 </script>
 
 <a
-  class="bg-mantle grid h-fit min-h-48 w-full rounded-xl shadow-md transition-all duration-100 hover:scale-[1.01] md:min-w-128 md:grid-cols-[192px_1fr]"
+  class="bg-mantle grid h-fit min-h-48 w-full rounded-xl shadow-lg transition-all duration-100 hover:scale-[1.01] md:min-w-128 md:grid-cols-[192px_1fr]"
   href="projects/{path}"
   in:blur={{ delay: delay + 100, duration: 400 }}
 >

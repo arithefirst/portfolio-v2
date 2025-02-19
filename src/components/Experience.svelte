@@ -19,7 +19,7 @@
 </script>
 
 <div
-  class="bg-mantle grid grid-cols-[192px_1fr] items-center rounded-xl shadow-md"
+  class="bg-mantle grid grid-cols-[192px_1fr] items-center rounded-xl shadow-lg"
   in:blur={{ delay: delay + 100, duration: 400 }}
 >
   <div class="bg-crust mr-6 size-full overflow-hidden rounded-l-xl">
