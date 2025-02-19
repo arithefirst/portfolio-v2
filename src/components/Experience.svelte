@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { blur } from 'svelte/transition';
+
   interface Props {
     startDate: Date;
     endDate: Date | 'Current';
@@ -7,13 +9,14 @@
     bullets: string[];
     src: string;
     alt: string;
+    delay: number;
   }
 
-  const { startDate, endDate, company, position, bullets, src, alt }: Props = $props();
+  const { startDate, endDate, company, position, bullets, src, alt, delay }: Props = $props();
   const dateOpts: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short' };
 </script>
 
-<div class="bg-mantle flex items-center rounded-lg p-6 shadow-lg">
+<div class="bg-mantle flex items-center rounded-lg p-6 shadow-lg" in:blur={{ delay: delay + 100, duration: 400 }}>
   <img class="mr-6 size-24" {src} {alt} />
   <div>
     <p class="text-sm text-gray-400 italic">{position}</p>
