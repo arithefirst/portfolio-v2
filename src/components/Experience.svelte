@@ -22,12 +22,12 @@
   class="bg-mantle grid grid-cols-[192px_1fr] items-center rounded-xl shadow-md"
   in:blur={{ delay: delay + 100, duration: 400 }}
 >
-  <div class="bg-crust mr-6 size-full rounded-l-xl">
+  <div class="bg-crust mr-6 size-full overflow-hidden rounded-l-xl">
     <img {src} {alt} />
   </div>
   <div class="p-3">
-    <p class="text-sm text-gray-400 italic">{position}</p>
     <h3 class="text-xl font-bold">{company}</h3>
+    <p class="text-sm text-gray-400 italic">{position}</p>
     <p class="text-gray-400">
       {startDateShort} -
       {endDateShort === new Date().toLocaleDateString('en-US', dateOpts) ? 'Present' : endDateShort}
