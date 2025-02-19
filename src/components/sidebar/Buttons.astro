@@ -1,5 +1,5 @@
 ---
-import Link from '$lib/components/link.astro';
+import Link from '$lib/components/Link.svelte';
 import Discord from '$lib/icons/discord.svelte';
 import GitHub from '$lib/icons/github.svelte';
 import Mail from '$lib/icons/mail.svelte';
@@ -12,6 +12,6 @@ const { class: className } = Astro.props;
 <div class={'bg-base mx-auto flex h-10 w-48 items-center justify-center gap-2 rounded-full ' + className}>
   <Link href="https://discord.com/users/613358761901424652"><Discord /></Link>
   <Link href="https://github.com/arithefirst"><GitHub /></Link>
-  <Link href="mailto:ari@arithefirst.com"><Mail /></Link>
+  <Link href="mailto:ari@arithefirst.com" email client:load><Mail /></Link>
   <PromptTriggerButton client:load class="w-fit"><Terminal /></PromptTriggerButton>
 </div>
