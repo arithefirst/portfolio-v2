@@ -2,6 +2,7 @@
 import Command from '$lib/components/Command.svelte';
 import Desktop from '$lib/components/sidebar/Desktop.astro';
 import Mobile from '$lib/components/sidebar/Mobile.astro';
+import Analytics from '@vercel/analytics/astro';
 import '$lib/styles/global.css';
 
 const { pageTitle }: { pageTitle?: string } = Astro.props;
@@ -23,6 +24,7 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
       rel="stylesheet"
     />
   </head>
+  <Analytics />
   <body class="m-0 h-full w-full">
     <Command client:load />
     <div class="flex h-screen flex-col md:flex-row">
@@ -33,4 +35,6 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
       </div>
     </div>
   </body>
+
+
 </html>
