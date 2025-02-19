@@ -12,15 +12,21 @@ interface ExperienceCard {
   alt: string;
 }
 
-const projectArray: ExperienceCard[] = Array.from({ length: 3 }, () => ({
-  startDate: new Date('April 2009'),
-  endDate: new Date(),
-  company: 'Google LLC',
-  position: 'Frontend Engineer',
-  bullets: Array(3).fill('Lorem ipsum dolor sit amet, consectetur adipiscing elit'),
-  src: '/favicon.svg',
-  alt: 'Svetle icon',
-}));
+const projectArray: ExperienceCard[] = [
+  {
+    startDate: new Date('November 13, 2024 EST'),
+    endDate: new Date(),
+    company: 'Hikari3',
+    position: 'Lead Developer (Volunteer)',
+    bullets: [
+      'Assisted in pioneering an imageboard software used by hundreds of people daily',
+      'Set up and repaired several imperative services for functionality and user satisfaction.',
+      'Implemented GitHub continous integration to improve developer experience.',
+    ],
+    src: '/images/h3.png',
+    alt: 'the hikari3.ch logo',
+  },
+];
 ---
 
 <Layout>
