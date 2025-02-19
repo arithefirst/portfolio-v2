@@ -16,9 +16,14 @@
   const dateOpts: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short' };
 </script>
 
-<div class="bg-mantle flex items-center rounded-lg p-6 shadow-lg" in:blur={{ delay: delay + 100, duration: 400 }}>
-  <img class="mr-6 size-24" {src} {alt} />
-  <div>
+<div
+  class="bg-mantle grid grid-cols-[192px_1fr] items-center rounded-xl shadow-md"
+  in:blur={{ delay: delay + 100, duration: 400 }}
+>
+  <div class="bg-crust mr-6 size-full rounded-l-xl">
+    <img {src} {alt} />
+  </div>
+  <div class="p-3">
     <p class="text-sm text-gray-400 italic">{position}</p>
     <h3 class="text-xl font-bold">{company}</h3>
     <p class="text-gray-400">
