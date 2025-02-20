@@ -4,9 +4,11 @@ import { Button } from '$lib/components/ui/button/index.js';
 import Download from '$lib/icons/download.svelte';
 import Layout from '$lib/layouts/Layout.astro';
 import CopyButton from '$lib/components/copyButton.svelte';
+import { Toaster } from '$lib/components/ui/sonner';
 ---
 
 <Layout>
+  <Toaster client:load offset="20px" visibleToasts={3} />
   <div
     class="font-code mx-auto h-fit w-11/12 overflow-y-scroll px-2 py-4 md:absolute md:top-1/2 md:left-1/2 md:w-fit md:-translate-x-1/2 md:-translate-y-1/2 md:p-0"
   >

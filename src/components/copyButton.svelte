@@ -1,13 +1,28 @@
 <script lang="ts">
+  import { toast } from 'svelte-sonner';
   import { Button } from '$lib/components/ui/button/index.js';
   import Clipboard from '$lib/icons/clipboard.svelte';
   let { text }: { text: string } = $props();
 
+  function dispatchToast(text: string, success: boolean) {
+    if (success) {
+      toast.success(text);
+    } else {
+      toast.error(text);
+    }
+  }
+
   function copyText() {
     navigator.clipboard
       .writeText(text)
-      .then(() => console.log('Successfully copied text to clipboard'))
-      .catch((e) => console.error(`Error copying text: ${(e as Error).message}`));
+      .then(() => {
+        console.info('Successfully copied text to clipboard');
+        dispatchToast('Successfully copied to clipboard.', true);
+      })
+      .catch((e) => {
+        console.error(`Error copying text: ${(e as Error).message}`);
+        dispatchToast('Copying failed. (See console)', false);
+      });
   }
 </script>
 
