@@ -1,7 +1,7 @@
 <script lang="ts">
   interface ExperienceCard {
     startDate: Date;
-    endDate: Date | 'Current';
+    endDate: Date;
     company: string;
     position: string;
     bullets: string[];
