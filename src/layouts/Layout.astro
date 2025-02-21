@@ -3,27 +3,15 @@ import Command from '$lib/components/Command.svelte';
 import Desktop from '$lib/components/sidebar/Desktop.astro';
 import Mobile from '$lib/components/sidebar/Mobile.astro';
 import Analytics from '@vercel/analytics/astro';
+import Head from '$lib/layouts/Head.astro';
 import '$lib/styles/global.css';
 
-const { pageTitle }: { pageTitle?: string } = Astro.props;
+const { pageTitle, description }: { pageTitle?: string; description?: string } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="m-0 h-full w-full">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="darkreader-lock" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>arithefirst{pageTitle ? ` | ${pageTitle}` : ''}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <Head pageTitle={pageTitle} description={description} />
   <Analytics />
   <body class="m-0 h-full w-full">
     <Command client:load />
@@ -35,6 +23,4 @@ const { pageTitle }: { pageTitle?: string } = Astro.props;
       </div>
     </div>
   </body>
-
-
 </html>
