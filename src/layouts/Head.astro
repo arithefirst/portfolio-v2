@@ -1,6 +1,5 @@
 ---
 const { pageTitle, description }: { pageTitle?: string; description?: string } = Astro.props;
-console.log(pageTitle);
 ---
 
 <head>
@@ -14,7 +13,7 @@ console.log(pageTitle);
   <meta itemprop="image" content="" />
 
   <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://next.arithefirst.com/" />
+  <meta property="og:url" content={`https://next.arithefirst.com${Astro.url.pathname}`} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={`arithefirst ${pageTitle ? ` | ${pageTitle}` : ''}`} />
   {description ? <meta property="og:description" content={description} /> : ''}
