@@ -7,7 +7,8 @@
   import { onMount } from 'svelte';
   import CommandElement from './CommandElement.svelte';
 
-  let open = $state(false);
+  let open: boolean = $state(false);
+  let value: string = $state('');
 
   onMount(() => {
     function handleKeydown(e: KeyboardEvent) {
@@ -25,9 +26,9 @@
 </script>
 
 <Command.Dialog bind:open>
-  <Command.Input placeholder="Type a command or search..." />
+  <Command.Input bind:value placeholder="Search pages and socials..." />
   <Command.List>
-    <Command.Empty>No results found.</Command.Empty>
+    <Command.Empty class="truncate px-4">No results found for "{value}".</Command.Empty>
     <Command.Group heading="Pages">
       {#each pages as item}
         <CommandElement href={item.href} bind:open defaultTarget>
