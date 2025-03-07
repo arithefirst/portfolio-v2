@@ -1,12 +1,17 @@
 ---
 import Buttons from '$lib/components/sidebar/Buttons.astro';
-import Miku from '$lib/images/miku.png';
+import Teto from '$lib/images/teto.jpg';
 import { Image } from 'astro:assets';
 ---
 
 <nav class="bg-mantle flex h-1/5 flex-col items-center justify-center p-4 shadow-2xl md:hidden">
   <div class="flex items-center justify-center">
-    <Image src={Miku} alt="Hatsune Miku" class="h-16 w-16 rounded-full shadow-lg" loading="eager" />
+    <Image
+      src={Teto}
+      alt="Kasane Teto hugging a Kasane Teto Plushie"
+      class="h-16 w-16 rounded-full shadow-lg"
+      loading="eager"
+    />
     <hr class="border-subtext-0 mx-2 h-3/4 border-l-1" />
     <div class="block w-fit">
       <h1 class="w-fit text-2xl">Hi, I'm <span class="font-bold">April Hall</span></h1>

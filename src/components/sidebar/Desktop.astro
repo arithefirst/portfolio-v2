@@ -1,13 +1,13 @@
 ---
 import Buttons from '$lib/components/sidebar/Buttons.astro';
-import Miku from '$lib/images/miku.png';
+import Teto from '$lib/images/teto.jpg';
 import SidebarText from '$lib/layouts/SidebarText.svelte';
 import { Image } from 'astro:assets';
 ---
 
 <nav class="bg-mantle hidden w-2/7 min-w-[380px] items-center md:flex">
   <div class="my-auto h-fit w-full scale-[0.9] 2xl:scale-100">
-    <Image src={Miku} alt="Hatsune Miku" class="mx-auto w-2/3 rounded-full shadow-lg" />
+    <Image src={Teto} alt="Kasane Teto hugging a Kasane Teto Plushie" class="mx-auto w-2/3 rounded-full shadow-lg" />
     <SidebarText client:load />
     <Buttons class="mt-28" />
   </div>
