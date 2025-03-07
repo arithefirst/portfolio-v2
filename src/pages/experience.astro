@@ -12,7 +12,7 @@ interface ExperienceCard {
   alt: string;
 }
 
-const projectArray: ExperienceCard[] = [
+const experienceArray: ExperienceCard[] = [
   {
     startDate: new Date('November 13, 2024 EST'),
     endDate: new Date(),
@@ -32,6 +32,6 @@ const projectArray: ExperienceCard[] = [
 <Layout description="April Hall's Work Experience" pageTitle="Experience">
   <div class="w-full p-8">
     <h1 class="mb-4 text-4xl font-bold">Experience</h1>
-    <Experiences cards={projectArray} client:load />
+    <Experiences cards={experienceArray} client:load />
   </div>
 </Layout>
