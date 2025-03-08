@@ -5,13 +5,16 @@ import GitHub from '$lib/icons/github.svelte';
 import Mail from '$lib/icons/mail.svelte';
 import Terminal from '$lib/icons/terminal.svelte';
 import PromptTriggerButton from '$lib/components/PromptTriggerButton.svelte';
+import BlueSky from '$lib/icons/bluesky.svelte';
 
 const { class: className } = Astro.props;
+const hoverClass = 'transition-all duration-400 hover:pb-4';
 ---
 
-<div class={'bg-base mx-auto flex h-10 w-48 items-center justify-center gap-2 rounded-full ' + className}>
-  <Link href="https://discord.com/users/613358761901424652"><Discord /></Link>
-  <Link href="https://github.com/arithefirst"><GitHub /></Link>
-  <Link href="mailto:ari@arithefirst.com" email client:load><Mail /></Link>
-  <PromptTriggerButton client:load class="w-fit"><Terminal /></PromptTriggerButton>
+<div class={'bg-base mx-auto flex h-10 w-fit p-3 items-center justify-center gap-2 rounded-full ' + className}>
+  <Link href="https://bsky.app/profile/arithefirst.com" class={hoverClass}><BlueSky /></Link>
+  <Link href="https://discord.com/users/613358761901424652" class={hoverClass}><Discord /></Link>
+  <Link href="https://github.com/arithefirst" class={hoverClass}><GitHub /></Link>
+  <Link href="mailto:ari@arithefirst.com" email client:load class={hoverClass}><Mail /></Link>
+  <PromptTriggerButton client:load class="w-fit" class={hoverClass}><Terminal /></PromptTriggerButton>
 </div>

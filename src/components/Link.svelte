@@ -4,10 +4,11 @@
   interface Props {
     href: string;
     email: boolean;
+    class: string;
     children: Snippet;
   }
 
-  const { href, email, children }: Props = $props();
+  const { href, email, children, class: className }: Props = $props();
 
   function openEmailLink(event: MouseEvent) {
     window.open(href, 'mail');
@@ -16,7 +17,7 @@
 </script>
 
 {#if email}
-  <a {href} onclick={(event) => openEmailLink(event)}>{@render children()}</a>
+  <a {href} class={className} onclick={(event) => openEmailLink(event)}>{@render children()}</a>
 {:else}
-  <a {href} rel="noreferrer noopener" target="_blank">{@render children()}</a>
+  <a {href} class={className} rel="noreferrer noopener" target="_blank">{@render children()}</a>
 {/if}
