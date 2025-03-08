@@ -2,6 +2,7 @@
 import Buttons from '$lib/components/sidebar/Buttons.astro';
 import Teto from '$lib/images/teto.jpg';
 import { Image } from 'astro:assets';
+import MobilePaletteOpen from './MobilePaletteOpen.svelte';
 ---
 
 <nav class="bg-mantle flex h-1/5 flex-col items-center justify-center p-4 shadow-2xl md:hidden">
@@ -23,3 +24,5 @@ import { Image } from 'astro:assets';
   </div>
   <Buttons class="mt-2 scale-75" />
 </nav>
+
+<MobilePaletteOpen client:load />

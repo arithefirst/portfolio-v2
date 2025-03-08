@@ -3,8 +3,6 @@ import Link from '$lib/components/Link.svelte';
 import Discord from '$lib/icons/discord.svelte';
 import GitHub from '$lib/icons/github.svelte';
 import Mail from '$lib/icons/mail.svelte';
-import Terminal from '$lib/icons/terminal.svelte';
-import PromptTriggerButton from '$lib/components/PromptTriggerButton.svelte';
 import BlueSky from '$lib/icons/bluesky.svelte';
 
 const { class: className } = Astro.props;
@@ -16,5 +14,4 @@ const hoverClass = 'transition-all duration-400 hover:pb-4';
   <Link href="https://discord.com/users/613358761901424652" class={hoverClass}><Discord /></Link>
   <Link href="https://github.com/arithefirst" class={hoverClass}><GitHub /></Link>
   <Link href="mailto:ari@arithefirst.com" email client:load class={hoverClass}><Mail /></Link>
-  <PromptTriggerButton client:load class="w-fit" class={hoverClass}><Terminal /></PromptTriggerButton>
 </div>
