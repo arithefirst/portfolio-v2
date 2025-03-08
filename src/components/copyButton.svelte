@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { toast } from 'svelte-sonner';
   import { Button } from '$lib/components/ui/button/index.js';
   import Clipboard from '$lib/icons/clipboard.svelte';
+  import { toast } from 'svelte-sonner';
   let { text }: { text: string } = $props();
 
   function dispatchToast(text: string, success: boolean) {
