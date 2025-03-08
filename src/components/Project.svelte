@@ -7,9 +7,10 @@
     description: string;
     badges?: string[];
     delay: number;
+    padding?: number;
   }
 
-  const { src, alt, title, description, badges, delay }: Props = $props();
+  const { src, alt, title, description, badges, delay, padding = 0 }: Props = $props();
   const path = title.replaceAll(/[._+ ]/gm, '-').toLowerCase();
 </script>
 
@@ -18,7 +19,12 @@
   href="projects/{path}"
   in:blur={{ delay: delay + 100, duration: 400 }}
 >
-  <img class="bg-crust hidden size-full rounded-l-xl object-cover md:inline" {src} {alt} />
+  <img
+    class="bg-crust hidden size-full rounded-l-xl object-cover md:inline"
+    style={`padding: ${padding / 4}rem`}
+    {src}
+    {alt}
+  />
   <div class="w-full rounded-r-xl p-4 md:w-auto md:flex-grow">
     <h1 class="text-2xl font-bold">{title}</h1>
     <p class="text-subtext-0 font-roboto mt-1 text-wrap">{description}</p>
