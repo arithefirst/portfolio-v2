@@ -1,9 +1,13 @@
 ---
+import AboutMe from '$lib/content/about-me.md';
 import Layout from '$lib/layouts/Layout.astro';
 ---
 
 <Layout>
   <div class="w-full p-8">
     <h1 class="mb-4 text-4xl font-bold">About Me</h1>
+    <article class="lg:prose-lg prose md:w-2/3">
+      <AboutMe />
+    </article>
   </div>
 </Layout>
