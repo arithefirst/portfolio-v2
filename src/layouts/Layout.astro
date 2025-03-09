@@ -5,6 +5,7 @@ import Mobile from '$lib/components/sidebar/Mobile.astro';
 import Head from '$lib/layouts/Head.astro';
 import '$lib/styles/global.css';
 import Analytics from '@vercel/analytics/astro';
+import KBD from '$lib/components/KBD.astro';
 
 const { pageTitle, description }: { pageTitle?: string; description?: string } = Astro.props;
 ---
@@ -15,12 +16,18 @@ const { pageTitle, description }: { pageTitle?: string; description?: string } =
   <Analytics />
   <body class="m-0 h-full w-full">
     <Command client:load />
-    <div class="flex h-screen flex-col md:flex-row">
+    <main class="flex h-screen flex-col md:flex-row">
       <Desktop />
       <Mobile />
       <div class="bg-topography relative size-full overflow-y-scroll">
         <slot />
       </div>
+    </main>
+    <div class="bg-mauve fixed bottom-0 z-50 hidden w-full items-center justify-center p-1 text-base md:flex">
+      <strong class="bold mr-1">TIP: </strong>
+      Press
+      <span class="mr-0.5 ml-1 flex items-center"><KBD class="mr-0.5">CTRL</KBD>+<KBD class="mr-0.5">K</KBD></span>
+      to open Command Pallette
     </div>
   </body>
 </html>

@@ -1,0 +1,11 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<kbd class:list={['border-mantle bg-base text-text rounded-md border px-2 text-xs leading-4 font-semibold', className]}
+  ><slot /></kbd
+>
