@@ -72,6 +72,12 @@ html {
   @apply text-text bg-base;
 }
 
+/* Text highlight */
+::selection {
+  background: var(--color-mauve);
+  color: var(--color-mantle);
+}
+
 /* Scrollbar Stuff */
 
 ::-webkit-scrollbar {
