@@ -2,10 +2,12 @@
 const { pageTitle, description = "April Hall's Personal Portfolio" }: { pageTitle?: string; description?: string } =
   Astro.props;
 import { ClientRouter } from 'astro:transitions';
+import SpeedInsights from '@vercel/speed-insights/astro';
 ---
 
 <!-- 
   Portfolio V2 - A minimalistic catppuccin developer portfolio
+  https://github.com/arithefirst/portfolio-v2
   Copyright (C) 2025 April Hall (arithefirst)
 
   This program is free software: you can redistribute it and/or modify
@@ -53,3 +55,4 @@ import { ClientRouter } from 'astro:transitions';
   <ClientRouter />
   <slot />
 </head>
+<SpeedInsights />
