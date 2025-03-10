@@ -1,5 +1,6 @@
 ---
-const { pageTitle, description }: { pageTitle?: string; description?: string } = Astro.props;
+const { pageTitle, description = "April Hall's Personal Portfolio" }: { pageTitle?: string; description?: string } =
+  Astro.props;
 import { ClientRouter } from 'astro:transitions';
 ---
 
@@ -11,20 +12,20 @@ import { ClientRouter } from 'astro:transitions';
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content={`arithefirst ${pageTitle ? `| ${pageTitle}` : ''}`} />
   {description ? <meta itemprop="description" content={description} /> : ''}
-  <meta itemprop="image" content="" />
+  <meta itemprop="image" content="/images/teto.jpg" />
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content={`https://next.arithefirst.com${Astro.url.pathname}`} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={`arithefirst ${pageTitle ? ` | ${pageTitle}` : ''}`} />
   {description ? <meta property="og:description" content={description} /> : ''}
-  <meta property="og:image" content="" />
+  <meta property="og:image" content="/images/teto.jpg" />
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={`arithefirst ${pageTitle ? ` | ${pageTitle}` : ''}`} />
   {description ? <meta name="twitter:description" content={description} /> : ''}
-  <meta name="twitter:image" content="" />
+  <meta name="twitter:image" content="/images/teto.jpg" />
 
   <!-- Other -->
   <meta charset="UTF-8" />
