@@ -4,24 +4,35 @@ const { pageTitle, description = "April Hall's Personal Portfolio" }: { pageTitl
 import { ClientRouter } from 'astro:transitions';
 ---
 
+<!-- 
+  Portfolio V2 - A minimalistic catppuccin developer portfolio
+  Copyright (C) 2025 April Hall (arithefirst)
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+-->
 <head>
-  <!-- HTML Tags -->
+  <!-- Meta/OpenGraph/SEO Tags -->
   <title>{`arithefirst ${pageTitle ? ` | ${pageTitle}` : ''}`}</title>
   {description ? <meta name="description" content={description} /> : ''}
-
-  <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content={`arithefirst ${pageTitle ? `| ${pageTitle}` : ''}`} />
   {description ? <meta itemprop="description" content={description} /> : ''}
   <meta itemprop="image" content="/images/teto.jpg" />
-
-  <!-- Facebook Meta Tags -->
   <meta property="og:url" content={`https://next.arithefirst.com${Astro.url.pathname}`} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={`arithefirst ${pageTitle ? ` | ${pageTitle}` : ''}`} />
   {description ? <meta property="og:description" content={description} /> : ''}
   <meta property="og:image" content="/images/teto.jpg" />
-
-  <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={`arithefirst ${pageTitle ? ` | ${pageTitle}` : ''}`} />
   {description ? <meta name="twitter:description" content={description} /> : ''}
@@ -40,7 +51,5 @@ import { ClientRouter } from 'astro:transitions';
     rel="stylesheet"
   />
   <ClientRouter />
-
-  <!-- Extra tags -->
   <slot />
 </head>
