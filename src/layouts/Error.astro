@@ -1,6 +1,7 @@
 ---
 import '$lib/styles/global.css';
 import { Button } from '$lib/components/ui/button';
+import Head from './Head.astro';
 
 interface Props {
   code: number;
@@ -12,21 +13,7 @@ const { code, message } = Astro.props;
 
 <!doctype html>
 <html lang="en" class="m-0 size-full">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="darkreader-lock" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>arithefirst | {code}</title>
-    <meta name="description" content={message} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <Head description={`${code} - ${message}`} pageTitle={code} />
   <body class="bg-topography size-full">
     <div class="flex size-full flex-col items-center justify-center">
       <h1 class="text-mauve w-fit text-[35vw] leading-none font-black md:text-[50vh]">{code}</h1>
