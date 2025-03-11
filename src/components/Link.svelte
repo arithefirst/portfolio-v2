@@ -22,9 +22,9 @@
   <Tooltip.Root>
     <Tooltip.Trigger class={className}>
       {#if email}
-        <a {href} onclick={(event) => openEmailLink(event)}>{@render children()}</a>
+        <a {href} aria-label={alt} onclick={(event) => openEmailLink(event)}>{@render children()}</a>
       {:else}
-        <a {href} rel="noreferrer noopener" target="_blank">{@render children()}</a>
+        <a {href} aria-label={alt} rel="noreferrer noopener" target="_blank">{@render children()}</a>
       {/if}
     </Tooltip.Trigger>
     <Tooltip.Content class="bg-crust text-text border-base border">
