@@ -2,7 +2,12 @@ Hi, I'm April, but most people call me Ari. I'm a fullstack software developer w
 
 I specialize in creating engaging user experiences using modern frameworks and tools, and I continually challenge myself by working on personal projects and staying up-to-date with the latest technologies to make sure my skills never fall flat.
 
-### In My Free Time, I Enjoy:
+<!--
+  Try to avoid anything other than H2 here,
+  it fucks with accessibility
+-->
+
+## In My Free Time, I Enjoy:
 
 - Working on personal programming projects
 - System Administration/Homelabbing
