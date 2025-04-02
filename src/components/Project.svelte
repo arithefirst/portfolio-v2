@@ -15,7 +15,7 @@
 
 <a
   class="bg-mantle grid h-fit min-h-48 w-full rounded-xl shadow-lg transition-all duration-100 hover:scale-[1.01] md:min-w-128 md:grid-cols-[192px_1fr]"
-  href={slug}
+  href="/projects/{slug}"
   in:blur={{ delay: delay + 100, duration: 400 }}
 >
   <img class="bg-crust hidden size-full rounded-l-xl object-cover md:inline" {src} {alt} />
