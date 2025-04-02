@@ -21,12 +21,28 @@ export const projectArray: ProjectType[] = [
     slug: 'shibedrill-site',
     images: [
       {
-        src: '/images/cheesecake.webp',
-        alt: 'alt',
+        src: '/images/shibedrill-site/home.png',
+        alt: "shibedrill.site's homepage",
       },
       {
-        src: '/images/cheesecake.webp',
-        alt: 'alt',
+        src: '/images/shibedrill-site/article.png',
+        alt: 'An example article from shibedrill.site',
+      },
+      {
+        src: '/images/shibedrill-site/about.png',
+        alt: "Shibedrill.site's About page",
+      },
+      {
+        src: '/images/shibedrill-site/contact.png',
+        alt: "Shibedrill.site's Contact page",
+      },
+      {
+        src: '/images/shibedrill-site/archive.png',
+        alt: "Shibedrill.site's archive page",
+      },
+      {
+        src: '/images/shibedrill-site/tags.png',
+        alt: "Shibedrill.site's tags page",
       },
     ],
   },

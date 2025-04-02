@@ -9,15 +9,14 @@
   };
 
   const { images }: Props = $props();
-  console.log(images);
 </script>
 
 {#if images}
-  <Carousel.Root class="flex h-full items-center justify-center">
+  <Carousel.Root class="w-5/6">
     <Carousel.Content>
       {#each images as img}
         <Carousel.Item>
-          <img alt={img.alt} src={img.src} class="aspect-video" />
+          <img alt={img.alt} src={img.src} class="mx-auto rounded-lg shadow" />
         </Carousel.Item>
       {/each}
     </Carousel.Content>

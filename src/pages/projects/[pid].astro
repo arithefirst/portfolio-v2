@@ -1,8 +1,8 @@
 ---
-import type { GetStaticPaths } from 'astro';
+import ProjectCarousel from '$lib/components/ProjectCarousel.svelte';
 import Layout from '$lib/layouts/Layout.astro';
 import { projectArray } from '$lib/projects';
-import ProjectCarousel from '$lib/components/ProjectCarousel.svelte';
+import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (() => {
   return projectArray.map((v) => {
@@ -20,11 +20,14 @@ const badgeClass = 'bg-crust border-text font-roboto rounded-md border px-3';
 ---
 
 <Layout description={project?.description} pageTitle={project?.title}>
-  <div class="@container h-full w-full p-8">
+  <div class="@container flex h-full w-full flex-col p-8">
     <h1 class="mb-1 text-4xl font-bold">{project?.title}</h1>
     <h2 class="w-1/2 text-lg">{project?.description}</h2>
-    <div class="mb-4 flex w-11/12 flex-wrap gap-2 pt-2">
+    <div class="flex w-11/12 flex-wrap gap-2 pt-2">
       {project?.badges.map((data) => <div class={badgeClass}>{data}</div>)}
+    </div>
+    <div class="flex w-full flex-grow items-center justify-center">
+      <ProjectCarousel images={project?.images} client:load />
     </div>
   </div>
 </Layout>
