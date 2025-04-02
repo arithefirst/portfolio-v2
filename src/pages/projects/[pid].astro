@@ -3,6 +3,8 @@ import ProjectCarousel from '$lib/components/ProjectCarousel.svelte';
 import Layout from '$lib/layouts/Layout.astro';
 import { projectArray } from '$lib/projects';
 import type { GetStaticPaths } from 'astro';
+import { Button } from '$lib/components/ui/button';
+import { ExternalLink, Binary } from 'lucide-svelte';
 
 export const getStaticPaths = (() => {
   return projectArray.map((v) => {
@@ -25,6 +27,28 @@ const badgeClass = 'bg-crust border-text font-roboto rounded-md border px-3';
     <h2 class="w-1/2 text-lg">{project?.description}</h2>
     <div class="flex w-11/12 flex-wrap gap-2 pt-2">
       {project?.badges.map((data) => <div class={badgeClass}>{data}</div>)}
+    </div>
+    <div class="mt-2 flex gap-2">
+      {
+        project?.live ? (
+          <Button href={project?.live} target="_blank">
+            Visit Site
+            <ExternalLink />
+          </Button>
+        ) : (
+          ''
+        )
+      }
+      {
+        project?.source ? (
+          <Button href={project?.source} target="_blank">
+            View Source
+            <Binary />
+          </Button>
+        ) : (
+          ''
+        )
+      }
     </div>
     <div class="flex w-full flex-grow items-center justify-center">
       <ProjectCarousel images={project?.images} client:load />

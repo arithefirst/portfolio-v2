@@ -9,6 +9,8 @@ interface ProjectType {
     src: string;
     alt: string;
   }[];
+  live?: string;
+  source?: string;
 }
 
 export const projectArray: ProjectType[] = [
@@ -19,6 +21,8 @@ export const projectArray: ProjectType[] = [
     alt: 'Cheesecake, the harbinger of the end times',
     badges: ['AstroJS', 'DaisyUI', 'TailwindCSS', 'Vercel'],
     slug: 'shibedrill-site',
+    live: 'https://www.shibedrill.site',
+    source: 'https://github.com/arithefirst/shibedrill-homepage',
     images: [
       {
         src: '/images/shibedrill-site/home.png',
@@ -53,6 +57,17 @@ export const projectArray: ProjectType[] = [
     alt: 'Lockbox Logo',
     badges: ['DaisyUI', 'Docker', 'SvelteKit', 'TailwindCSS', 'TypeScript'],
     slug: 'lockbox',
+    source: 'https://github.com/arithefirst/lockbox',
+    images: [
+      {
+        src: '/images/lockbox/upload.png',
+        alt: 'The upload page for Lockbox',
+      },
+      {
+        src: '/images/lockbox/admin.png',
+        alt: 'The admin dashboard for Lockbox',
+      },
+    ],
   },
   {
     title: 'SVChat',
@@ -61,5 +76,36 @@ export const projectArray: ProjectType[] = [
     alt: '',
     badges: ['Cassandra', 'SQLite', 'SvelteKit', 'TailwindCSS', 'TypeScript'],
     slug: 'svchat',
+    source: 'https://github.com/arithefirst/svchat',
+    images: [
+      {
+        src: '/images/svchat/channel-sent.png',
+        alt: 'A SVChat channel with messages sent',
+      },
+      {
+        src: '/images/svchat/channel-empty.png',
+        alt: 'An empty SVChat channel',
+      },
+      {
+        src: '/images/svchat/account.png',
+        alt: 'SVChat SVChat ccount settings page',
+      },
+      {
+        src: '/images/svchat/change-pfp.png',
+        alt: 'SVchat change profile picture dialog',
+      },
+      {
+        src: '/images/svchat/login.png',
+        alt: 'SVChat Login page',
+      },
+      {
+        src: '/images/svchat/signup.png',
+        alt: 'SVChat Sign up page',
+      },
+      {
+        src: '/images/svchat/channel-dark.png',
+        alt: 'A SVChat channel in dark mode',
+      },
+    ],
   },
 ];
