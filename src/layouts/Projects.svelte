@@ -8,6 +8,7 @@
     title: string;
     description: string;
     badges: string[];
+    slug: string;
   }
 
   interface Props {
@@ -31,6 +32,7 @@
       description={item.description}
       badges={item.badges}
       delay={i * 100}
+      slug={item.slug}
     />
   {/if}
 {/each}
