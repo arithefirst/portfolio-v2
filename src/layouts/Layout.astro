@@ -23,11 +23,28 @@ const { pageTitle, description }: { pageTitle?: string; description?: string } =
         <slot />
       </div>
     </main>
-    <div class="bg-mauve fixed bottom-0 z-50 hidden w-full items-center justify-center p-1 text-base md:flex">
+    <button
+      onclick="dispatchKeypress()"
+      class="bg-mauve fixed bottom-0 z-50 hidden w-full cursor-pointer items-center justify-center p-1 text-base md:flex"
+    >
       <strong class="bold mr-1">TIP: </strong>
       Press
-      <span class="mr-0.5 ml-1 flex items-center"><KBD class="mr-0.5">CTRL</KBD>+<KBD class="mr-0.5">K</KBD></span>
-      to open Command Palette
-    </div>
+      <span class="mr-0.5 ml-1 flex items-center"><KBD class="mr-0.5">CTRL</KBD>+<KBD class="mr-0.5">K</KBD></span> or click
+      here to open Command Palette
+    </button>
   </body>
 </html>
+
+<script is:inline>
+  function dispatchKeypress() {
+    const ctrlKEvent = new KeyboardEvent('keydown', {
+      key: 'k',
+      code: 'KeyK',
+      ctrlKey: true,
+      bubbles: true,
+      cancelable: true,
+    });
+
+    document.dispatchEvent(ctrlKEvent);
+  }
+</script>
