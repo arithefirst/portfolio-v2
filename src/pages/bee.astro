@@ -1,0 +1,79 @@
+---
+import Command from '$lib/components/Command.svelte';
+import Mobile from '$lib/components/sidebar/Mobile.astro';
+import Head from '$lib/layouts/Head.astro';
+import '$lib/styles/global.css';
+import Analytics from '@vercel/analytics/astro';
+import KBD from '$lib/components/KBD.astro';
+import Buttons from '$lib/components/sidebar/Buttons.astro';
+import SidebarText from '$lib/layouts/SidebarText.svelte';
+import { Image } from 'astro:assets';
+import Barry from '$lib/images/barry_bee_benson.jpg';
+import MobilePaletteOpen from '$lib/components/sidebar/MobilePaletteOpen.svelte';
+import BeeMovie from '$lib/content/bee-movie.md';
+---
+
+<!doctype html>
+<html lang="en" class="m-0 h-full w-full">
+  <Head
+    pageTitle="Barry Bee Benson"
+    description="According to all known laws of aviation, there is no way a bee should be able to fly."
+    image="/images/barry_bee_benson.webp"
+  />
+  <Analytics />
+  <body class="m-0 h-full w-full">
+    <Command client:load />
+    <main class="flex h-screen flex-col pb-11 md:flex-row md:pb-0">
+      <!-- Sidebars -->
+      <nav class="bg-mantle hidden w-2/7 min-w-[380px] items-center md:flex">
+        <div class="my-auto h-fit w-full scale-[0.9] 2xl:scale-100">
+          <Image src={Barry} alt="barry bee benson" class="mx-auto w-2/3 rounded-full shadow-lg" loading="eager" />
+          <SidebarText client:load name="Barry" text="Buzz Buzz, Buzz Buzz." />
+          <Buttons class="mt-28" />
+        </div>
+      </nav>
+      <nav class="bg-mantle flex h-1/5 flex-col items-center justify-center p-4 shadow-2xl md:hidden">
+        <div class="flex items-center justify-center">
+          <Image src={Barry} alt="barry bee benson" class="h-16 w-16 rounded-full shadow-lg" loading="eager" />
+          <hr class="border-subtext-0 mx-2 h-3/4 border-l-1" />
+          <div class="block w-fit">
+            <h1 class="w-fit text-2xl">Hi, I'm <span class="font-bold">Barry</span></h1>
+            <div class="font-roboto w-fit text-xs">
+              <p class="w-fit">Buzz Buzz, Buzz Buzz.</p>
+            </div>
+          </div>
+        </div>
+        <Buttons class="mt-2 scale-75" />
+      </nav>
+
+      <MobilePaletteOpen client:load />
+      <Mobile />
+      <div class="bg-topography relative size-full overflow-y-scroll p-8 text-center">
+        <BeeMovie />
+      </div>
+    </main>
+    <button
+      onclick="dispatchKeypress()"
+      class="bg-mauve fixed bottom-0 z-50 hidden w-full cursor-pointer items-center justify-center p-1 text-base md:flex"
+    >
+      <strong class="bold mr-1">TIP: </strong>
+      Press
+      <span class="mr-0.5 ml-1 flex items-center"><KBD class="mr-0.5">CTRL</KBD>+<KBD class="mr-0.5">K</KBD></span> or click
+      here to open Command Palette
+    </button>
+  </body>
+</html>
+
+<script is:inline>
+  function dispatchKeypress() {
+    const ctrlKEvent = new KeyboardEvent('keydown', {
+      key: 'k',
+      code: 'KeyK',
+      ctrlKey: true,
+      bubbles: true,
+      cancelable: true,
+    });
+
+    document.dispatchEvent(ctrlKEvent);
+  }
+</script>
