@@ -23,3 +23,5 @@ I specialize in creating engaging user experiences using modern frameworks and t
   [Phasmophobia](https://store.steampowered.com/app/739630/Phasmophobia/)
   [ULTRAKILL](https://store.steampowered.com/app/1229490/ULTRAKILL/),
   and others
+
+(yes, this is the same thing that's on the homepage.)
