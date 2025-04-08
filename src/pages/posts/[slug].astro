@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import Layout from '$lib/layouts/Layout.astro';
+import { formatDescription } from '$lib/scripts/formatDescription';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -14,7 +15,11 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout description={post.body?.split('\n')[0] + '..'} pageTitle={post.data.title}>
+<Layout
+  description={formatDescription(post.body)}
+  pageTitle={post.data.title}
+  image={`https://www.arithefirst.com/og_image/${post.id}`}
+>
   <div class="w-full p-8">
     <h1 class="mb-1 text-4xl font-bold">{post.data.title}</h1>
     <h2 class="w-1/2 text-lg">
