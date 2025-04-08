@@ -1,0 +1,37 @@
+---
+import Layout from '$lib/layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { formatDescription } from '$lib/scripts/formatDescription';
+import { Button } from '$lib/components/ui/button';
+
+const posts = await getCollection('posts');
+
+// Sort the posts by date before rendering them
+posts.sort(
+  (a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) =>
+    b.data.date.getMilliseconds() - a.data.date.getMilliseconds(),
+);
+---
+
+<Layout description="April Hall's Blog Posts" pageTitle="Blog">
+  <div class="w-full p-8">
+    <h1 class="mb-4 text-4xl font-bold">Blog Posts</h1>
+    {
+      posts.map((post) => (
+        <div class="bg-mantle w-1/2 rounded-xl p-4">
+          <h1 class="text-2xl font-bold">{post.data.title}</h1>
+          <h2 class="w-1/2">
+            By
+            <span class="font-bold">{post.data.author}</span>
+            <span class="text-subtext-0">
+              - {post.data.date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
+            </span>
+          </h2>
+          <p class="my-4 indent-12">{formatDescription(post.body, 300)}</p>
+          <Button href={`/posts/${post.id}`}>Read More</Button>
+        </div>
+      ))
+    }
+  </div>
+</Layout>

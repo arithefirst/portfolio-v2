@@ -12,4 +12,10 @@ export default defineConfig({
   },
 
   integrations: [svelte()],
+
+  markdown: {
+    shikiConfig: {
+      theme: 'catppuccin-mocha',
+    },
+  },
 });
