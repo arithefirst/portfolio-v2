@@ -4,6 +4,7 @@
 @config './tailwind.config.ts';
 
 @theme {
+  --bh-desktop: calc(100vh - 32px);
   /* Catppuccin Colors */
   --color-mauve: #cba6f7;
   --color-red: #f38ba8;

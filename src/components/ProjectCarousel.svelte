@@ -12,7 +12,7 @@
 </script>
 
 {#if images}
-  <Carousel.Root class="w-5/6">
+  <Carousel.Root class="m-4 w-5/6">
     <Carousel.Content>
       {#each images as img}
         <Carousel.Item>

@@ -16,7 +16,7 @@ const { pageTitle, description, image }: { pageTitle?: string; description?: str
   <Analytics />
   <body class="m-0 h-full w-full">
     <Command client:load />
-    <main class="flex h-screen flex-col pb-11 md:flex-row md:pb-0">
+    <main class="flex h-screen flex-col pb-11 md:h-(--bh-desktop) md:flex-row md:pb-0">
       <Desktop />
       <Mobile />
       <div class="bg-topography relative size-full overflow-y-scroll">
