@@ -1,11 +1,8 @@
-// @ts-check
+import rehypeExternalLinks from 'rehype-external-links';
 import { defineConfig } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
-
 import svelte from '@astrojs/svelte';
 
-// https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
@@ -17,5 +14,6 @@ export default defineConfig({
     shikiConfig: {
       theme: 'catppuccin-mocha',
     },
+    rehypePlugins: [[rehypeExternalLinks, { target: '_blank', rel: ['nofollow', 'noopener', 'noreferrer'] }]],
   },
 });
