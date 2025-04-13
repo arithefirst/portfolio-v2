@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import Layout from '$lib/layouts/Layout.astro';
 import { formatDescription } from '$lib/scripts/formatDescription';
+import Clock from '$lib/icons/clock.svelte';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -12,7 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, remarkPluginFrontmatter } = await render(post);
 ---
 
 <Layout description=" " pageTitle={post.data.title} image={`https://www.arithefirst.com/og_image/${post.id}.png`}>
@@ -24,6 +25,9 @@ const { Content } = await render(post);
       <span class="text-subtext-0">
         - {post.data.date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span
       >
+    </h2>
+    <h2 class="text-subtext-0 flex w-1/2 items-center gap-1">
+      <Clock size="16px" />{remarkPluginFrontmatter.minutesRead}
     </h2>
     <article
       class="lg:prose-lg prose-h2:text-2xl prose prose-p:indent-12 prose-pre:border-2 prose-pre:border-border md:w-2/3"

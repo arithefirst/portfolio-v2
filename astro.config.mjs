@@ -1,7 +1,8 @@
-import rehypeExternalLinks from 'rehype-external-links';
-import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
 import svelte from '@astrojs/svelte';
+import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'astro/config';
+import { remarkReadingTime } from './readingTime';
+import rehypeExternalLinks from 'rehype-external-links';
 
 export default defineConfig({
   vite: {
@@ -15,5 +16,6 @@ export default defineConfig({
       theme: 'catppuccin-mocha',
     },
     rehypePlugins: [[rehypeExternalLinks, { target: '_blank', rel: ['nofollow', 'noopener', 'noreferrer'] }]],
+    remarkPlugins: [remarkReadingTime],
   },
 });
