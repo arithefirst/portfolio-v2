@@ -20,7 +20,7 @@
       onclick={dispatchKeypress}
       class="bg-mantle border-crust absolute bottom-6 left-1/2 flex w-3/4 -translate-x-1/2
       cursor-pointer items-center justify-center gap-2 rounded-full border p-2"
-      ><Terminal size={20} /> Open Command Palette</button
+      ><Terminal size={20} /> Open Navigation</button
     >
   </div>
 </div>
