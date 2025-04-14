@@ -34,7 +34,7 @@ posts.sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.
                 <Clock size="16px" />
                 {remarkPluginFrontmatter.minutesRead}
               </h2>
-              <p class="my-4 indent-12">{formatDescription(post.body, 300)}</p>
+              <p class="my-4">{formatDescription(post.body, 300)}</p>
               <Button href={`/posts/${post.id}`}>Read More</Button>
             </div>
           );
