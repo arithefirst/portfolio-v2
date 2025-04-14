@@ -1,9 +1,10 @@
 ---
-import Layout from '$lib/layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
-import { formatDescription } from '$lib/scripts/formatDescription';
 import { Button } from '$lib/components/ui/button';
+import Clock from '$lib/icons/clock.svelte';
+import Layout from '$lib/layouts/Layout.astro';
+import { formatDescription } from '$lib/scripts/formatDescription';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 const posts = await getCollection('posts');
 
@@ -16,20 +17,28 @@ posts.sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.
     <h1 class="mb-4 text-4xl font-bold">Blog Posts</h1>
     <div class="flex flex-col gap-4">
       {
-        posts.map((post) => (
-          <div class="bg-mantle w-full rounded-xl p-4 md:w-3/4">
-            <h1 class="text-2xl font-bold">{post.data.title}</h1>
-            <h2 class="w-full md:w-1/2">
-              By
-              <span class="font-bold">{post.data.author}</span>
-              <span class="text-subtext-0">
-                - {post.data.date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
-              </span>
-            </h2>
-            <p class="my-4 indent-12">{formatDescription(post.body, 300)}</p>
-            <Button href={`/posts/${post.id}`}>Read More</Button>
-          </div>
-        ))
+        posts.map(async (post) => {
+          const { remarkPluginFrontmatter } = await render(post);
+
+          return (
+            <div class="bg-mantle w-full rounded-xl p-4 md:w-3/4">
+              <h1 class="text-2xl font-bold">{post.data.title}</h1>
+              <h2 class="w-full md:w-1/2">
+                By
+                <span class="font-bold">{post.data.author}</span>
+                <span class="text-subtext-0">
+                  - {post.data.date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
+                </span>
+              </h2>
+              <h2 class="text-subtext-0 flex w-1/2 items-center gap-1">
+                <Clock size="16px" />
+                {remarkPluginFrontmatter.minutesRead}
+              </h2>
+              <p class="my-4 indent-12">{formatDescription(post.body, 300)}</p>
+              <Button href={`/posts/${post.id}`}>Read More</Button>
+            </div>
+          );
+        })
       }
     </div>
   </div>
