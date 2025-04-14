@@ -2,6 +2,8 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import Layout from '$lib/layouts/Layout.astro';
 import Clock from '$lib/icons/clock.svelte';
+import Warn from '$lib/icons/warn.svelte';
+import Close from '$lib/icons/close.svelte';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -16,6 +18,24 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 ---
 
 <Layout description="" pageTitle={post.data.title} image={`https://www.arithefirst.com/og_image/${post.id}.png`}>
+  {
+    () =>
+      post.data.wip ? (
+        <div class="bg-yellow flex w-full items-center justify-between p-4 text-base" id="work-in-progress-header">
+          <div class="flex items-center gap-2">
+            <Warn />
+            <p>This post is a work in progess. Expect things to change.</p>
+          </div>
+          <button
+            aria-label="close 'work in progress' header"
+            onclick="document.getElementById('work-in-progress-header').remove()"
+            class="cursor-pointer"
+          >
+            <Close size={24} />
+          </button>
+        </div>
+      ) : undefined
+  }
   <div class="w-full p-8">
     <h1 class="mb-1 text-4xl font-bold">{post.data.title}</h1>
     <h2 class="w-1/2 text-lg">
