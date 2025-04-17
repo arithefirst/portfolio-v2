@@ -1,0 +1,17 @@
+---
+import Layout from '$lib/layouts/Layout.astro';
+---
+
+<Layout
+  description="TRIPLE BAKA!!"
+  pageTitle="BAKA BAKA BAKA!!"
+  image="https://www.arithefirst.com/images/bakabakabaka.webp"
+>
+  <div class="absolute top-1/2 left-1/2 container w-11/12 -translate-x-1/2 -translate-y-1/2">
+    <h1 class="mb-1 w-full pl-1">triple_baka.mp4</h1>
+    <video controls loop class="border-border aspect-video w-11/12 rounded-lg border-2 bg-black">
+      <source src="/video/triple_baka.mp4" type="video/mp4" />
+      Your browser does not support the `&lt;video&gt;` tag :(
+    </video>
+  </div>
+</Layout>
