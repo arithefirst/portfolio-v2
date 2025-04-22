@@ -1,6 +1,5 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { formatDescription } from '$lib/scripts/formatDescription';
 import type { APIContext } from 'astro';
 import { marked } from 'marked';
 import sanitizeHtml from 'sanitize-html';
@@ -28,7 +27,7 @@ export async function GET(context: APIContext) {
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
-      description: formatDescription(post.body),
+      description: post.data.description,
       link: `/posts/${post.id}/`,
       content: post.renderedContent,
     })),

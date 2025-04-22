@@ -3,6 +3,7 @@
 'date': '2025-04-13 2:41:40 PM EST'
 'author': 'April Hall'
 'wip': true
+'description': "Picking a JavaScript framework is something that's hard to get right, so I built the same app 5 times to make sure I did!"
 ---
 
 For modern developers, the journey begins with a flood of choices, each carrying its own weight. For web developers, one of the most critical decisions is the JavaScript framework they choose to learn. This choice isn't just a preference; it has the potential to shape the trajectory of your career, serving as a key reference point for the skills, opportunities, and professional identity you create along the way.

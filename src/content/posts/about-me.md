@@ -3,6 +3,7 @@
 'author': 'April Hall'
 'date': '2025-04-07 2:41:40 PM EST'
 'wip': false
+'description': 'All about Ari, the owner and builder of this website!'
 ---
 
 Hi, I'm April, but most people call me Ari. I'm a fullstack software developer with a focus on frontend, based in New Jersey, USA. My journey in programming began when I received a Raspberry Pi for my 9th birthday, and I've been passionate about coding ever since.
