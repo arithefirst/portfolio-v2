@@ -3,6 +3,20 @@
 @plugin '@tailwindcss/typography';
 @config './tailwind.config.ts';
 
+@utility prose {
+  *:not(pre) > code {
+    &::before,
+    &::after {
+      content: none;
+    }
+
+    background-color: var(--color-surface-0);
+    border-radius: 5px;
+    border: 1px solid var(--color-mantle);
+    padding: 1px 2px;
+  }
+}
+
 @theme {
   --bh-desktop: calc(100vh - 32px);
   /* Catppuccin Colors */
