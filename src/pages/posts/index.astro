@@ -5,6 +5,7 @@ import Layout from '$lib/layouts/Layout.astro';
 import { formatDescription } from '$lib/scripts/formatDescription';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection, render } from 'astro:content';
+import Head from '$lib/layouts/Head.astro';
 
 const posts = await getCollection('posts');
 
@@ -12,7 +13,16 @@ const posts = await getCollection('posts');
 posts.sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Layout description="April Hall's Blog Posts" pageTitle="Blog">
+<Head description="April Hall's Blog Posts" pageTitle="Blog">
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="April Hall's Blog Posts"
+    href={new URL('/posts/rss.xml', Astro.site)}
+  />
+</Head>
+
+<Layout excludeHead>
   <div class="w-full p-8">
     <h1 class="mb-4 text-4xl font-bold">Blog Posts</h1>
     <div class="flex flex-col gap-4">

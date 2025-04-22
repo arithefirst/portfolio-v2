@@ -7,12 +7,17 @@ import '$lib/styles/global.css';
 import Analytics from '@vercel/analytics/astro';
 import KBD from '$lib/components/KBD.astro';
 
-const { pageTitle, description, image }: { pageTitle?: string; description?: string; image?: string } = Astro.props;
+const {
+  pageTitle,
+  description,
+  image,
+  excludeHead = false,
+}: { pageTitle?: string; description?: string; image?: string; excludeHead?: boolean } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="m-0 h-full w-full">
-  <Head pageTitle={pageTitle} description={description} image={image} />
+  {!excludeHead && <Head pageTitle={pageTitle} description={description} image={image} />}
   <Analytics />
   <body class="m-0 h-full w-full">
     <Command client:load />

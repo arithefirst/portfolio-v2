@@ -5,17 +5,16 @@ import { remarkReadingTime } from './readingTime';
 import rehypeExternalLinks from 'rehype-external-links';
 
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()],
-  },
-
+  site: 'https://www.arithefirst.com',
   integrations: [svelte()],
-
   markdown: {
     shikiConfig: {
       theme: 'catppuccin-mocha',
     },
     rehypePlugins: [[rehypeExternalLinks, { target: '_blank', rel: ['nofollow', 'noopener', 'noreferrer'] }]],
     remarkPlugins: [remarkReadingTime],
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

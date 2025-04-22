@@ -5,19 +5,19 @@
 'wip': true
 ---
 
-For modern developers, the journey begins with a flood of choices, each carrying its own weight. For web developers, one of the most important decisions is the JavaScript framework they choose to learn. This choice isn't just a preference; it has the potential to shape the trajectory of your career, serving as a key reference point for the skills, opportunities, and professional identity you create along the way.
+For modern developers, the journey begins with a flood of choices, each carrying its own weight. For web developers, one of the most critical decisions is the JavaScript framework they choose to learn. This choice isn't just a preference; it has the potential to shape the trajectory of your career, serving as a key reference point for the skills, opportunities, and professional identity you create along the way.
 
-Personally, I got started on SvelteKit, and I kind of regret it. While Svelte and SvelteKit are amazing technologies with incredible DX and performance, it's very hard to find companies that use them due to how new they still are (created in 2016). For this reason, I wanted to explore what other options are out there, so I decided there was no better way to learn a new framework than to build the same thing in a bunch of them!
+I got started on SvelteKit, and I kind of regret it. While Svelte and SvelteKit are excellent technologies with incredible DX and performance, it's very hard to find companies that use them due to how new they still are (created in 2016). For this reason, I wanted to explore what other options are out there, so I decided there was no better way to learn a new framework than to build the same thing in a bunch of them!
 
 For this experiment, I'll be trying the following frameworks:
 
-- **Svelte** with SvelteKit
-- **React** with NextJS
-- **Vue** with NuxtJS
-- **Angular** with Analog
-- **Solid** with SolidStart
+- **Svelte** with [SvelteKit](https://svelte.dev/docs/kit)
+- **Vue** with [NuxtJS](https://nuxt.com)
+- **React** with [NextJS](https://nextjs.org)
+- **Angular** (no meta framework)
+- **Solid** with [SolidStart](https://start.solidjs.com/)
 
-There's really no specific reason I picked these frameworks, other than the fact that they're currently some of the most popular and widely used ones. In terms of the rest of the tech stack, I'll be using ShadCN for the UI, PostgreSQL on Neon for the database, and Clerk for authentication.
+There's no specific reason I picked these frameworks, other than the fact that they're currently some of the most popular and widely used ones. In terms of the rest of the tech stack, I'll be using ShadCN for the UI, PostgreSQL on Neon for the database, and Clerk for authentication.
 
 ## Scoring System
 
@@ -68,12 +68,12 @@ $$ LANGUAGE plpgsql;
 -- Run the function on row update
 CREATE TRIGGER new_post_trigger
 AFTER INSERT
-ON posts  -- Use your table name 'posts'
+ON posts
 FOR EACH ROW
 EXECUTE PROCEDURE notify_new_post();
 ```
 
-Then, we can listen to these from the node server and can run actions when the notifications are received.
+Then, we can listen to these from the node server and run actions when the notifications are received.
 
 ## SvelteKit
 
@@ -123,7 +123,7 @@ Another issue I ran into was with the appearance prop for Clerk components. Sinc
     >
 ```
 
-To globally theme all of the clerk components on your site. However, this doesn't work in the Svelte SDK. Because of that issue, you have to manually theme each Clerk component, and even then themes don't always apply. For example, when clicking on the user button, the dialog that pops up is un-themed and is forced to use the default Clerk theme.
+To globally theme all of the clerk components on your site. However, this doesn't work in the Svelte SDK. Because of that issue, you have to manually theme each Clerk component, and even then themes don't always apply. For example, when clicking on the user button, the dialog that pops up is un-themed, and is forced to use the default Clerk theme.
 
 Overall, here's how I would rate SvelteKit on our scale:
 
@@ -153,7 +153,7 @@ Alright, it's time to step out of my comfort zone by diving into the first non-S
 
 Out of the box, Nuxt is much more bare than what `sv create` let me do, but that's probably just me being spoiled by Rich Harris, and I can predict this will be a recurring theme. I went ahead and set up Prettier on my own and used the [Drizzle recipe](https://hub.nuxt.com/docs/recipes/drizzle) to get the ORM working.
 
-Everything in Vue was super simple to use at first, and I was able to hit the ground running. I finished the UI super quickly, probably because it was very similar to the Svelte UI. I really do enjoy Vue a lot and didn't really run into any issues while using it, but that doesn't mean I loved it. A lot of the syntax seemed strange and alien to me. Take the way that Vue does iteration, for example:
+Everything in Vue was super simple to use at first, and I was able to hit the ground running. I finished the UI super quickly, probably because it was very similar to the Svelte UI. I enjoy Vue a lot and didn't really run into any issues while using it, but that doesn't mean I loved it. A lot of the syntax seemed strange and alien to me. Take the way that Vue does iteration, for example:
 
 ```vue
 <div v-for="..." />
@@ -194,8 +194,8 @@ I also had a lot of trouble with environment variables (Clerk keys and DB connec
 There were a few other things I disliked about the Vue syntax that I won't go greatly into detail about, but here are the bullets:
 
 - Being forced to wrap all pages/components in `<template>` tags
-  - Requiring wrapped components makes sense in React, where files are TypeScript that return markup in a function, but it feels icky in a markup-only file.
-- Markup based logic being controlled by the `v-foo` directives
+- Requiring wrapped components makes sense in React, where files are TypeScript that return markup in a function, but it feels icky in a markup-only file.
+- Markup-based logic being controlled by the `v-foo` directives
 - Multiple script tags (setup and regular)
 - The required `:` before props/attribs that will contain javascript
 
@@ -212,7 +212,7 @@ This is how I would score Nuxt on the scale:
 
 ## React
 
-Moving on from Vue, the next framework on the list is React with NextJS. Just like the previous few frameworks, I pulled up the [docs](https://nextjs.org/docs/app/getting-started) and created a new NextJS App. In case you're following curious, my selections for the wizard are in the dropdown below. In addition, I installed and setup Prettier and Drizzle.
+Moving on from Vue, the next framework on the list is React with NextJS. Just like the previous few frameworks, I pulled up the [docs](https://nextjs.org/docs/app/getting-started) and created a new NextJS App. In case you're curious, my selections for the wizard are in the dropdown below. In addition, I installed and set up Prettier and Drizzle.
 
 <details>
 
@@ -229,17 +229,56 @@ Moving on from Vue, the next framework on the list is React with NextJS. Just li
 
 </details>
 
-Out of the gate, React was very refreshing. While many people dislike its syntax, I actually enjoy it quite a bit! NextJS' server components are also really cool, and while the idea of being able to run seemed a bit odd at first, it's actually pretty useful.
+Out of the gate, React was very refreshing. While many people dislike its syntax, I enjoy it quite a bit! NextJS' server components are also really cool, and while the idea of being able to run server-side code from a React component seemed a bit odd at first, it's pretty useful.
 
-Despite me glazing NextJS, there are also some things I don't like. The main issue being: It's **Slooooooow**. It also, much like SvelteKit, has no direct support for websockets while using the App Router, but the implementation of a custom server wasn't too bad.
+Despite my glazing of NextJS, there are also some things I don't like. The main issue is that by default, page navigation is pretty slow. You can fix this by adding a `loading.tsx` file in the same directory as your `page.tsx`, which will render while the page is loading, but I didn't find this info until relatively deep into the [Next Data Fetching Docs](https://nextjs.org/docs/app/getting-started/fetching-data), so I'm gonna dock points regardless. It also, much like SvelteKit, has no direct support for websockets while using the App Router, but the implementation of a custom server wasn't too bad.
 
-Other than that, NextJS was super easy to work with, and I had no trouble getting everything working.
+Other than that, NextJS was super easy to work with, and I had no trouble getting everything working, and It's very likely that I use react (probably not Next, but maybe something else like React Router) in a future project.
 
 This is how I would score NextJS on our scale:
 
-| Category     | Score | Explanation                                                                                           |
-| :----------- | :---- | :---------------------------------------------------------------------------------------------------- |
-| Ease of use  | 10    | Easy to use and understand.                                                                           |
-| Performance  | 5     | Fast initial page loads, took forever to load data from the DB, unlike both Svelte and Vue.           |
-| Funky Issues | 9     | Websockets were not natively supported, but the implementation of a custom server wasn't challenging. |
-| Total        | 24/30 | -                                                                                                     |
+| Category     | Score | Explanation                                                                            |
+| :----------- | :---- | :------------------------------------------------------------------------------------- |
+| Ease of use  | 9     | Super easy to work with, intuitive API and great documentation.                        |
+| Performance  | 8     | Generally fast, but default page navigation can feel slow without a loading indicator. |
+| Funky Issues | 9     | No built-in websocket support but the custom server was easy to setup                  |
+| Total        | 26/30 | -                                                                                      |
+
+## Angular
+
+I couldn't tell you why, but this whole time I've dreaded having to do Angular. I had no real reason to, but I did. After getting into it, I realized that oh boy was I right.
+
+Before I get into _why_ I dislike angular so strongly, I'll get into the setup of everything as I have for the previous frameworks. I pulled the docs for Angular x Vite apps from [angular.dev](https://angular.dev/overview). I ran `bun install -g @angular/cli` to install the Angular CLI, and than ran `ng new verity-angular` to setup the project template. In case you're curious, my selections for the wizard are in the dropdown below.
+
+<details>
+
+<summary>`ng new` selections</summary>
+
+- CSS
+- No
+
+(this one was really short)
+
+</details>
+
+Now, into my actual thoughts. The first thing I noticed when I started building was how ugly and un-intuitive the templating syntax was.
+
+```ts
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [],
+  template: `
+    <div>
+      <h1>{{ title }}</h1>
+    </div>
+  `,
+})
+export class AppComponent {
+  title = 'Verity (Angular Edition)';
+}
+```
+
+Instead of being able to just create a file and start templating, you have to write out this whole constructor, where you use `@Component` to define the actuall component (EX: The tag it uses, the imports it requires, the component itself), and then you have to declare the props in a class below that. In my opinion, this is bad. I've never seen another framework do something like this, and for good reason.
+
+I also dislike that inside of this constructor, you have to declare everything that the component imports, in addition to actually importing them at the top of the file, which is a very anti-DRY way of doing things, and I think it's just kinda dumb.
