@@ -1,9 +1,9 @@
 ---
-'title': 'Building the Same App 5 Times to Pick the Best Framework'
-'date': '2025-04-13 2:41:40 PM EST'
+'title': 'Building the Same App 4 Times to Pick the Best Framework'
+'date': '2025-04-22 9:33:26 PM EST'
 'author': 'April Hall'
-'wip': true
-'description': "Picking a JavaScript framework is something that's hard to get right, so I built the same app 5 times to make sure I did!"
+'wip': false
+'description': "Picking a JavaScript framework is something that's hard to get right, so I built the same app 4 times to make sure I did!"
 ---
 
 For modern developers, the journey begins with a flood of choices, each carrying its own weight. For web developers, one of the most critical decisions is the JavaScript framework they choose to learn. This choice isn't just a preference; it has the potential to shape the trajectory of your career, serving as a key reference point for the skills, opportunities, and professional identity you create along the way.
@@ -15,7 +15,6 @@ For this experiment, I'll be trying the following frameworks:
 - **Svelte** with [SvelteKit](https://svelte.dev/docs/kit)
 - **Vue** with [NuxtJS](https://nuxt.com)
 - **React** with [NextJS](https://nextjs.org)
-- **Angular** (no meta framework)
 - **Solid** with [SolidStart](https://start.solidjs.com/)
 
 There's no specific reason I picked these frameworks, other than the fact that they're currently some of the most popular and widely used ones. In terms of the rest of the tech stack, I'll be using ShadCN for the UI, PostgreSQL on Neon for the database, and Clerk for authentication.
@@ -132,8 +131,8 @@ Overall, here's how I would rate SvelteKit on our scale:
 | :----------- | :---- | :------------------------------------------------------------------------------------------------------------------------------ |
 | Ease of use  | 8     | Super easy to use with a low learning curve, but still some odd things that take a bit to wrap your head around.                |
 | Performance  | 10    | Stupid fast on account that it compiles to plain HTML, CSS, and JS.                                                             |
-| Funky Issues | 7     | Websockets were not natively supported, causing us to have to use SSE instead. There was also that issue with the Clerk themes. |
-| Total        | 25/30 | -                                                                                                                               |
+| Funky Issues | 8     | Websockets were not natively supported, causing us to have to use SSE instead. There was also that issue with the Clerk themes. |
+| Total        | 26/30 | -                                                                                                                               |
 
 If you're interested, the code for the SvelteKit version of Verity can be found [here](https://github.com/veritysocial/verity-svelte)
 
@@ -198,7 +197,7 @@ There were a few other things I disliked about the Vue syntax that I won't go gr
 - Requiring wrapped components makes sense in React, where files are TypeScript that return markup in a function, but it feels icky in a markup-only file.
 - Markup-based logic being controlled by the `v-foo` directives
 - Multiple script tags (setup and regular)
-- The required `:` before props/attribs that will contain javascript
+- The required `:` before props/attributes that will contain javascript
 
 By no means am I calling Vue/Nuxt a bad framework; I just disliked some of their syntax and design choices.
 
@@ -245,41 +244,60 @@ This is how I would score NextJS on our scale:
 | Funky Issues | 9     | No built-in websocket support but the custom server was easy to setup                  |
 | Total        | 26/30 | -                                                                                      |
 
-## Angular
+## Solid
 
-I couldn't tell you why, but this whole time I've dreaded having to do Angular. I had no real reason to, but I did. After getting into it, I realized that oh boy was I right.
+Next up, we have a framework I've been looking forward to trying the whole time I've been writing this article, Solid! Before trying solid, I'd heard of signals but was never quite sure what they actually were, as I had never really looked into it. In terms of DX, signals are the same as `useState()` except that the getter is a function instead of a constant. In terms of what goes on behind the scenes, however, signals do a lot more interesting things. In react, when you update a state, the entire DOM has to re-render. Signals have fine-grained reactivity, meaning that only the thing that changed is re-rendered, which is awesome because updates are scoped precisely to affected components, minimizing work and keeping the UI fast and responsive. This also means that things like `useMemo()` and `React.memo()` just don't exist in solid, as memoization happens automatically.
 
-Before I get into _why_ I dislike angular so strongly, I'll get into the setup of everything as I have for the previous frameworks. I pulled the docs for Angular x Vite apps from [angular.dev](https://angular.dev/overview). I ran `bun install -g @angular/cli` to install the Angular CLI, and than ran `ng new verity-angular` to setup the project template. In case you're curious, my selections for the wizard are in the dropdown below.
+Anyway, it's time to stop yapping about signals and start building. I used Solid's `bun create solid` tool. In case you're curious, my selections for the wizard are in the dropdown below. After that, I `cd`'d in to install dependencies and initialize the git repo.
 
 <details>
 
-<summary>`ng new` selections</summary>
+<summary>Create Solid Selections</summary>
 
-- CSS
-- No
-
-(this one was really short)
+- verity-solid
+- Yes
+- with-tailwindcss
+- Yes
 
 </details>
 
-Now, into my actual thoughts. The first thing I noticed when I started building was how ugly and un-intuitive the templating syntax was.
+The first thing I noticed when getting into development was that Solid resolved my biggest issue with React by exporting the `class` prop as `class` instead of `className`. Whenever developing in React, I find myself typing out `class` and renaming it to `className` afterward more often than I'd like to admit. This change also makes it more similar to HTML, reducing the learning curve for someone coming from plain HTML and CSS.
 
-```ts
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [],
-  template: `
-    <div>
-      <h1>{{ title }}</h1>
-    </div>
-  `,
-})
-export class AppComponent {
-  title = 'Verity (Angular Edition)';
+In contrast to this, I really dislike SolidStart's structure. Instead of having one `layout.tsx` file, it has three. `entry-client.tsx` is the starting point for an app in the browser, and is where you're supposed to put scripts that need to start with the app. It also has the `entry-server.tsx` file, which is more like your traditional `layout.tsx`, and is where you put the global HTML and CSS (EX: Body, Head). Finally, it has `app.tsx`, which is pretty much identical to a standard `layout.tsx` file, and is where you would put global things like a Navbar.
+
+I also noticed that I rather like the way that Solid does server-side data fetching. It's kind of a mix of SvelteKit's load functions and React Server Components. You import the `query` function from `@solidjs/router` , and can then write “use server” inside of the query function to tell it to fetch the data using the server instead of the client. Then, you can just import your data source and return the awaited fetch.
+
+```tsx
+const getPosts = query(async () => {
+  'use server';
+
+  const dbPosts = await db.select().from(posts).orderBy(desc(posts.createdAt));
+  return dbPosts;
+}, 'posts');
+```
+
+Then, you just need to use `createAsync()` from `@solidjs/router` (very similar to Svelte's `{#await foo then bar}`) to declare a constant with the loaded data inside of the component, like this:
+
+```tsx
+export default function Home() {
+  const posts = createAsync(() => getPosts());
+  return <pre>{posts}</pre>;
 }
 ```
 
-Instead of being able to just create a file and start templating, you have to write out this whole constructor, where you use `@Component` to define the actuall component (EX: The tag it uses, the imports it requires, the component itself), and then you have to declare the props in a class below that. In my opinion, this is bad. I've never seen another framework do something like this, and for good reason.
+It's very much a mix of different data-fetching methods that I enjoy, and I do like it. However, I still prefer Load Functions and Server Components, as they require a bit less boilerplate and are more readable (IMO). I would also like to note that I spend a decent amount of time trying to fix a hydration mismatch error, as the [data fetching](https://docs.solidjs.com/solid-start/building-your-application/data-loading) docs for SolidStart neglected to say that I needed to wrap the components using the async data in a `<Suspense>` tag in order to prevent that from happening.
 
-I also dislike that inside of this constructor, you have to declare everything that the component imports, in addition to actually importing them at the top of the file, which is a very anti-DRY way of doing things, and I think it's just kinda dumb.
+Solid also has an implementation of server actions that are very similar to NextJS, but much like their data fetching, I think their implementation comes in second place to Next.
+
+Overall, I think Solid is a very capable and interesting framework. Here's the scoring chart for SolidJS:
+
+| Category     | Score | Explanation                                                                          |
+| :----------- | :---- | :----------------------------------------------------------------------------------- |
+| Ease of use  | 7     | Good DX with familiar patterns, but file structure and boilerplate can be confusing. |
+| Performance  | 10    | Fine‑grained reactivity yields very fast updates.                                    |
+| Funky Issues | 8     | Multiple entry/layout files and boilerplate for data fetching cause slight friction. |
+| Total        | 25/30 | -                                                                                    |
+
+## In summary
+
+To wrap up, each of these frameworks offers powerful capabilities, but NextJS proved to be the most enjoyable to work with, and I’m excited to build more React applications in the future. SvelteKit remains my number one choice for its simplicity and performance, while Vue and Solid each have strong features that didn’t align perfectly with my preferred syntax and workflows. Ultimately, this experiment reinforced that the best framework is the one that balances productivity, developer experience, and project requirements for you, and will always vary person to person.
