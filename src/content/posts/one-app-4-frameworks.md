@@ -37,7 +37,7 @@ For this experiment, I'm going to be building a somewhat simple social media app
 We'll need a table for posts with the following Drizzle schema:
 
 ```typescript
-type framework = 'angular' | 'react' | 'solid' | 'svelte' | 'vue';
+type framework = 'react' | 'solid' | 'svelte' | 'vue';
 export const posts = pgTable('posts', {
   user: text('user').notNull(), // Clerk User ID
   id: varchar('id', { length: 36 }).primaryKey(), // Post ID (UUIDv4)
@@ -159,7 +159,7 @@ Everything in Vue was super simple to use at first, and I was able to hit the gr
 <div v-for="..." />
 ```
 
-This seems like a weird way to do it, and in my mind, the way most other frameworks do it (wrapping a component in a block that will repeat it for foo in bar) makes much more sense. However, I did find that this.
+This seems like a weird way to do it, and in my mind, the way most other frameworks do it (wrapping a component in a block that will repeat it for foo in bar) makes much more sense.
 
 Another thing that felt weird to me was the way Vue does component props. Using a function that you pass types to is, in my opinion, a very odd way to handle props that I've never seen before. If you don't get what I mean, this is what props in Vue look like:
 
@@ -194,7 +194,6 @@ I also had a lot of trouble with environment variables (Clerk keys and DB connec
 There were a few other things I disliked about the Vue syntax that I won't go greatly into detail about, but here are the bullets:
 
 - Being forced to wrap all pages/components in `<template>` tags
-- Requiring wrapped components makes sense in React, where files are TypeScript that return markup in a function, but it feels icky in a markup-only file.
 - Markup-based logic being controlled by the `v-foo` directives
 - Multiple script tags (setup and regular)
 - The required `:` before props/attributes that will contain javascript
@@ -233,7 +232,7 @@ Out of the gate, React was very refreshing. While many people dislike its syntax
 
 Despite my glazing of NextJS, there are also some things I don't like. The main issue is that by default, page navigation is pretty slow. You can fix this by adding a `loading.tsx` file in the same directory as your `page.tsx`, which will render while the page is loading, but I didn't find this info until relatively deep into the [Next Data Fetching Docs](https://nextjs.org/docs/app/getting-started/fetching-data), so I'm gonna dock points regardless. It also, much like SvelteKit, has no direct support for websockets while using the App Router, but the implementation of a custom server wasn't too bad.
 
-Other than that, NextJS was super easy to work with, and I had no trouble getting everything working, and It's very likely that I use react (probably not Next, but maybe something else like React Router) in a future project.
+Other than that, NextJS was super easy to work with, and I had no trouble getting everything working. It's very likely that I use it in a future project.
 
 This is how I would score NextJS on our scale:
 
@@ -289,14 +288,16 @@ It's very much a mix of different data-fetching methods that I enjoy, and I do l
 
 Solid also has an implementation of server actions that are very similar to NextJS, but much like their data fetching, I think their implementation comes in second place to Next.
 
+WebSockets (or at least Socket.io), much like in Svelte and Next, are not properly supported in SolidStart, and were a large pain to get working, especially considering I couldn't find any docs for a custom server. 
+
 Overall, I think Solid is a very capable and interesting framework. Here's the scoring chart for SolidJS:
 
 | Category     | Score | Explanation                                                                          |
 | :----------- | :---- | :----------------------------------------------------------------------------------- |
 | Ease of use  | 7     | Good DX with familiar patterns, but file structure and boilerplate can be confusing. |
 | Performance  | 10    | Fine‑grained reactivity yields very fast updates.                                    |
-| Funky Issues | 8     | Multiple entry/layout files and boilerplate for data fetching cause slight friction. |
-| Total        | 25/30 | -                                                                                    |
+| Funky Issues | 7     | Multiple entry/layout files and boilerplate for data fetching cause slight friction. WebSockets were a pain to get working. |
+| Total        | 24/30 | -                                                                                    |
 
 ## In summary
 
