@@ -288,16 +288,16 @@ It's very much a mix of different data-fetching methods that I enjoy, and I do l
 
 Solid also has an implementation of server actions that are very similar to NextJS, but much like their data fetching, I think their implementation comes in second place to Next.
 
-WebSockets (or at least Socket.io), much like in Svelte and Next, are not properly supported in SolidStart, and were a large pain to get working, especially considering I couldn't find any docs for a custom server. 
+WebSockets (or at least Socket.io), much like in Svelte and Next, are not properly supported in SolidStart, and were a large pain to get working, especially considering I couldn't find any docs for a custom server.
 
 Overall, I think Solid is a very capable and interesting framework. Here's the scoring chart for SolidJS:
 
-| Category     | Score | Explanation                                                                          |
-| :----------- | :---- | :----------------------------------------------------------------------------------- |
-| Ease of use  | 7     | Good DX with familiar patterns, but file structure and boilerplate can be confusing. |
-| Performance  | 10    | Fine‑grained reactivity yields very fast updates.                                    |
+| Category     | Score | Explanation                                                                                                                 |
+| :----------- | :---- | :-------------------------------------------------------------------------------------------------------------------------- |
+| Ease of use  | 7     | Good DX with familiar patterns, but file structure and boilerplate can be confusing.                                        |
+| Performance  | 10    | Fine‑grained reactivity yields very fast updates.                                                                           |
 | Funky Issues | 7     | Multiple entry/layout files and boilerplate for data fetching cause slight friction. WebSockets were a pain to get working. |
-| Total        | 24/30 | -                                                                                    |
+| Total        | 24/30 | -                                                                                                                           |
 
 ## In summary
 
