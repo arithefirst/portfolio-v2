@@ -2,6 +2,7 @@
 import Layout from '$lib/layouts/Layout.astro';
 import { Button } from '$lib/components/ui/button';
 import { links } from '$lib/scripts/links';
+import Transition from '$lib/components/Transition.svelte';
 ---
 
 <Layout>
@@ -9,7 +10,7 @@ import { links } from '$lib/scripts/links';
     <h1 class="mb-1 text-4xl font-bold">Find Me</h1>
     <h2 class="mb-1 text-xl">@arithefirst <em>(almost)</em> everywhere</h2>
     <h2 class="mb-4 text-sm">Usually available 8:00AM - 2:00AM in EST</h2>
-    <div class="grid w-full gap-2 md:w-1/2 md:grid-cols-2">
+    <Transition client:load class="grid w-full gap-2 md:w-1/2 md:grid-cols-2">
       {
         links.map((l) => (
           <Button class="" size="lg" href={l.href} target={l.overrideTarget ? '_self' : '_blank'}>
@@ -19,6 +20,6 @@ import { links } from '$lib/scripts/links';
           </Button>
         ))
       }
-    </div>
+    </Transition>
   </div>
 </Layout>
