@@ -1,13 +1,16 @@
 ---
+export const prerender = false;
 import Layout from '$lib/layouts/Layout.astro';
 import { Button } from '$lib/components/ui/button';
 import { links } from '$lib/scripts/links';
 import Transition from '$lib/components/Transition.svelte';
 import Clipped from '$lib/components/Clipped.svelte';
+
+const isClipped = Astro.url.searchParams.get('clip') !== null;
 ---
 
 <Layout description="Everywhere you can find April Hall on the internet" pageTitle="Find Me">
-  <Clipped client:only="" />
+  <Clipped client:load clipped={isClipped} />
   <div class="w-full p-8">
     <h1 class="mb-1 text-4xl font-bold">Find Me</h1>
     <h2 class="mb-1 text-xl">@arithefirst <em>(almost)</em> everywhere</h2>

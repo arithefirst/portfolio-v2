@@ -3,9 +3,11 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 import { remarkReadingTime } from './readingTime';
 import rehypeExternalLinks from 'rehype-external-links';
+import vercelAdapter from '@astrojs/vercel';
 
 export default defineConfig({
   site: 'https://www.arithefirst.com',
+  adapter: vercelAdapter(),
   integrations: [svelte()],
   markdown: {
     shikiConfig: {
