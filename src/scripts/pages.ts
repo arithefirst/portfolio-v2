@@ -10,6 +10,10 @@ export const pages: Page[] = [
     href: '/posts',
   },
   {
+    title: 'Contact',
+    href: '/contact',
+  },
+  {
     title: 'Projects',
     href: '/projects',
   },
