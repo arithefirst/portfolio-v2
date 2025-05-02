@@ -23,14 +23,18 @@
   in:blur={{ delay: delay + 100, duration: 400 }}
 >
   <div class="bg-crust mr-6 hidden size-full overflow-hidden rounded-l-xl md:block">
-    <img {src} {alt} />
+    <img {src} {alt} class="size-full object-cover" />
   </div>
   <div class="p-3">
     <h3 class="text-xl font-bold">{company}</h3>
     <p class="text-sm text-gray-400 italic">{position}</p>
     <p class="text-gray-400">
-      {startDateShort} -
-      {endDateShort === new Date().toLocaleDateString('en-US', dateOpts) ? 'Present' : endDateShort}
+      {#if startDate.getTime() === endDate.getTime()}
+        {startDateShort}
+      {:else}
+        {startDateShort} -
+        {endDateShort === new Date().toLocaleDateString('en-US', dateOpts) ? 'Present' : endDateShort}
+      {/if}
     </p>
     <ul class="mt-2 list-inside list-disc text-sm text-gray-300">
       {#each bullets as bullet}
