@@ -20,7 +20,7 @@ I'll break down why I think these rules are important one at a time.
 
 ## Understanding Generated Code
 
-Understanding generated code is the more important of these two rules. It's very important, as there are currently a large number of people, often referring to themselves as "Vibe Coders," who don't understand anything that they're doing. The number of people that I've seen who just run prompt after prompt after prompt and have no idea what their codebase is doing is truly disheartening.
+Understanding generated code is the most important of these three rules. It's very important, as there are currently a large number of people, often referring to themselves as "Vibe Coders," who don't understand anything that they're doing. The number of people that I've seen who just run prompt after prompt after prompt and have no idea what their codebase is doing is truly disheartening.
 
 People like this are truly screwed when it comes to fixing bugs or getting any sort of programming-related job. Think about it this way: If you vibe coded a SaaS and noticed there was a bug in your payment implementation that allowed users to skip the checkout and bypass your payment layer, the only thing you're able to do to solve this is to say, "Hey ChatGPT, XYZ is happening, fix it."
 
