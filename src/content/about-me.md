@@ -12,6 +12,7 @@ I specialize in creating engaging user experiences using modern frameworks and t
 - Working on personal programming projects
 - System Administration/Homelabbing
 - Watching my favorite content creators
+- Studying <abbr title="German">Deutsch</abbr> in hopes to one day become fluent
 - Occasionally playing video games like
   [Overwatch 2](https://overwatch.blizzard.com/),
   [Phasmophobia](https://store.steampowered.com/app/739630/Phasmophobia/)
