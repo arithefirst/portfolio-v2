@@ -38,4 +38,4 @@ I think this is 100% an acceptable use of AI, as you're not using it to really g
 
 Often, I find that online documentation for some libraries and packages is either terrible or nonexistent. Using AI for finding docs from the internet or generating docs from an installed package in `node_modules`.
 
-This is another thing. I find myself using AI for a lot, but it should be noted that the docs that AI generates can often be wrong, and it's almost always better to try to find docs online and pray that they're not bad.
+This is another thing that I find myself using AI for a lot, but it should be noted that the docs that AI generates can often be wrong, and it's almost always better to try to find docs online and pray that they're not bad.
