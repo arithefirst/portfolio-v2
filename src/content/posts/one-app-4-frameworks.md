@@ -14,7 +14,7 @@ For this experiment, I'll be trying the following frameworks:
 
 - **Svelte** with [SvelteKit](https://svelte.dev/docs/kit)
 - **Vue** with [NuxtJS](https://nuxt.com)
-- **React** with [NextJS](https://nextjs.org)
+- **React** with [Next.js](https://nextjs.org)
 - **Solid** with [SolidStart](https://start.solidjs.com/)
 
 There's no specific reason I picked these frameworks, other than the fact that they're currently some of the most popular and widely used ones. In terms of the rest of the tech stack, I'll be using ShadCN for the UI, PostgreSQL on Neon for the database, and Clerk for authentication.
@@ -211,7 +211,7 @@ This is how I would score Nuxt on the scale:
 
 ## React
 
-Moving on from Vue, the next framework on the list is React with NextJS. Just like the previous few frameworks, I pulled up the [docs](https://nextjs.org/docs/app/getting-started) and created a new NextJS App. In case you're curious, my selections for the wizard are in the dropdown below. In addition, I installed and set up Prettier and Drizzle.
+Moving on from Vue, the next framework on the list is React with Next.js. Just like the previous few frameworks, I pulled up the [docs](https://nextjs.org/docs/app/getting-started) and created a new Next.js App. In case you're curious, my selections for the wizard are in the dropdown below. In addition, I installed and set up Prettier and Drizzle.
 
 <details>
 
@@ -228,13 +228,13 @@ Moving on from Vue, the next framework on the list is React with NextJS. Just li
 
 </details>
 
-Out of the gate, React was very refreshing. While many people dislike its syntax, I enjoy it quite a bit! NextJS' server components are also really cool, and while the idea of being able to run server-side code from a React component seemed a bit odd at first, it's pretty useful.
+Out of the gate, React was very refreshing. While many people dislike its syntax, I enjoy it quite a bit! Next.js' server components are also really cool, and while the idea of being able to run server-side code from a React component seemed a bit odd at first, it's pretty useful.
 
-Despite my glazing of NextJS, there are also some things I don't like. The main issue is that by default, page navigation is pretty slow. You can fix this by adding a `loading.tsx` file in the same directory as your `page.tsx`, which will render while the page is loading, but I didn't find this info until relatively deep into the [Next Data Fetching Docs](https://nextjs.org/docs/app/getting-started/fetching-data), so I'm gonna dock points regardless. It also, much like SvelteKit, has no direct support for websockets while using the App Router, but the implementation of a custom server wasn't too bad.
+Despite my glazing of Next.js, there are also some things I don't like. The main issue is that by default, page navigation is pretty slow. You can fix this by adding a `loading.tsx` file in the same directory as your `page.tsx`, which will render while the page is loading, but I didn't find this info until relatively deep into the [Next Data Fetching Docs](https://nextjs.org/docs/app/getting-started/fetching-data), so I'm gonna dock points regardless. It also, much like SvelteKit, has no direct support for websockets while using the App Router, but the implementation of a custom server wasn't too bad.
 
-Other than that, NextJS was super easy to work with, and I had no trouble getting everything working. It's very likely that I use it in a future project.
+Other than that, Next.js was super easy to work with, and I had no trouble getting everything working. It's very likely that I use it in a future project.
 
-This is how I would score NextJS on our scale:
+This is how I would score Next.js on our scale:
 
 | Category     | Score | Explanation                                                                            |
 | :----------- | :---- | :------------------------------------------------------------------------------------- |
@@ -286,7 +286,7 @@ export default function Home() {
 
 It's very much a mix of different data-fetching methods that I enjoy, and I do like it. However, I still prefer Load Functions and Server Components, as they require a bit less boilerplate and are more readable (IMO). I would also like to note that I spend a decent amount of time trying to fix a hydration mismatch error, as the [data fetching](https://docs.solidjs.com/solid-start/building-your-application/data-loading) docs for SolidStart neglected to say that I needed to wrap the components using the async data in a `<Suspense>` tag in order to prevent that from happening.
 
-Solid also has an implementation of server actions that are very similar to NextJS, but much like their data fetching, I think their implementation comes in second place to Next.
+Solid also has an implementation of server actions that are very similar to Next.js, but much like their data fetching, I think their implementation comes in second place to Next.
 
 WebSockets (or at least Socket.io), much like in Svelte and Next, are not properly supported in SolidStart, and were a large pain to get working, especially considering I couldn't find any docs for a custom server.
 
@@ -301,4 +301,4 @@ Overall, I think Solid is a very capable and interesting framework. Here's the s
 
 ## In summary
 
-To wrap up, each of these frameworks offers powerful capabilities, but NextJS proved to be the most enjoyable to work with, and I’m excited to build more React applications in the future. SvelteKit remains my number one choice for its simplicity and performance, while Vue and Solid each have strong features that didn’t align perfectly with my preferred syntax and workflows. Ultimately, this experiment reinforced that the best framework is the one that balances productivity, developer experience, and project requirements for you, and will always vary person to person.
+To wrap up, each of these frameworks offers powerful capabilities, but Next.js proved to be the most enjoyable to work with, and I’m excited to build more React applications in the future. SvelteKit remains my number one choice for its simplicity and performance, while Vue and Solid each have strong features that didn’t align perfectly with my preferred syntax and workflows. Ultimately, this experiment reinforced that the best framework is the one that balances productivity, developer experience, and project requirements for you, and will always vary person to person.
