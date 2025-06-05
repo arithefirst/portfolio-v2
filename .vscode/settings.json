@@ -1,4 +1,16 @@
 {
   "spellright.language": ["en-US-10-1."],
-  "spellright.documentTypes": ["markdown", "latex", "plaintext"]
+  "spellright.documentTypes": ["markdown", "latex", "plaintext"],
+  "cSpell.words": [
+    "Homelab",
+    "homelabbing",
+    "homelabs",
+    "Jellyfin",
+    "Jellyseerr",
+    "lifechanging",
+    "Selfhostable",
+    "Selfhosted",
+    "Ubiquiti",
+    "Vaultwarden"
+  ]
 }
