@@ -110,7 +110,7 @@ export const projectArray: ProjectType[] = [
   },
   {
     title: 'Unbias',
-    description: 'A freemium SAAS that is designed to help detect bias in educational materials',
+    description: 'Detects bias in educational materials. ISTE AI Innovator Challenge Highlight 2025 Winner',
     src: 'https://www.unbias-ai.org/favicon.svg',
     live: 'https://www.unbias-ai.org',
     alt: '',
