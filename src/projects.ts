@@ -73,7 +73,7 @@ export const projectArray: ProjectType[] = [
     title: 'SVChat',
     description: 'A simple chat application built in SvelteKit',
     src: '/images/svchat.svg',
-    alt: '',
+    alt: 'The logo for SVChat',
     badges: ['Cassandra', 'SQLite', 'SvelteKit', 'TailwindCSS', 'TypeScript'],
     slug: 'svchat',
     source: 'https://github.com/arithefirst/svchat',
@@ -105,6 +105,29 @@ export const projectArray: ProjectType[] = [
       {
         src: '/images/svchat/channel-dark.png',
         alt: 'A SVChat channel in dark mode',
+      },
+    ],
+  },
+  {
+    title: 'Unbias',
+    description: 'A freemium SAAS that is designed to help detect bias in educational materials',
+    src: 'https://www.unbias-ai.org/favicon.svg',
+    live: 'https://www.unbias-ai.org',
+    alt: '',
+    badges: ['Clerk', 'PostgreSQL', 'Svelte', 'SvelteKit', 'Typescript', 'Vercel'],
+    slug: 'unbias',
+    images: [
+      {
+        src: '/images/unbias/home.png',
+        alt: 'Unbias home page',
+      },
+      {
+        src: '/images/unbias/select.png',
+        alt: 'Unbias analysis type picker page',
+      },
+      {
+        src: '/images/unbias/analysis.png',
+        alt: 'Unbias analysis results page',
       },
     ],
   },
