@@ -11,7 +11,7 @@ export const { getStaticPaths, GET } = OGImageRoute({
     title: page.title,
     description: '        ' + page.description,
     logo: {
-      path: './public/images/teto-rounded.webp',
+      path: './public/images/kitty-rounded.webp',
       size: [128, 128],
     },
     bgImage: {
