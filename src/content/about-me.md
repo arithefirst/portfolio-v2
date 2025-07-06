@@ -14,7 +14,5 @@ I specialize in creating engaging user experiences using modern frameworks and t
 - Watching my favorite content creators
 - Studying <abbr title="German">Deutsch</abbr> in hopes to one day become fluent
 - Occasionally playing video games like
-  [Overwatch 2](https://overwatch.blizzard.com/),
-  [Phasmophobia](https://store.steampowered.com/app/739630/Phasmophobia/)
-  [ULTRAKILL](https://store.steampowered.com/app/1229490/ULTRAKILL/),
-  and others
+  **Pokemon**, <br>
+  **Phasmophobia**, **Animal Crossing**, and others
