@@ -1,13 +1,14 @@
 ---
 import AboutMe from '$lib/content/about-me.md';
 import Layout from '$lib/layouts/Layout.astro';
+import Transition from '$lib/components/Transition.svelte';
 ---
 
 <Layout>
-  <div class="w-full p-8">
+  <Transition client:load class="w-full p-8">
     <h1 class="mb-4 text-4xl font-bold">About Me</h1>
     <article class="lg:prose-lg prose-h2:text-2xl prose-p:indent-12 prose md:w-2/3">
       <AboutMe />
     </article>
-  </div>
+  </Transition>
 </Layout>
