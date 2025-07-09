@@ -21,7 +21,11 @@ const project = projectArray.find((p) => p.slug === pid);
 const badgeClass = 'bg-crust border-text font-roboto rounded-md border px-3';
 ---
 
-<Layout description={project?.description} pageTitle={project?.title}>
+<Layout
+  description={project?.description}
+  pageTitle={project?.title}
+  image={`https://www.arithefirst.com${project?.images![0].src}`}
+>
   <div class="@container flex h-full w-full flex-col p-8">
     <h1 class="mb-1 text-4xl font-bold">{project?.title}</h1>
     <h2 class="w-1/2 text-lg">{project?.description}</h2>
