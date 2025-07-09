@@ -16,7 +16,7 @@
     <Carousel.Content>
       {#each images as img}
         <Carousel.Item>
-          <img alt={img.alt} src={img.src} class="mx-auto rounded-lg shadow" />
+          <img alt={img.alt} src={img.src} class="border-mauve mx-auto rounded-lg border-[3px] shadow" />
         </Carousel.Item>
       {/each}
     </Carousel.Content>
