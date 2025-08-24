@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { blur } from 'svelte/transition';
+  import { controlledBlur } from '$lib/scripts/controlledBlur';
 
   interface Props {
     startDate: Date;
@@ -20,7 +20,7 @@
 
 <div
   class="bg-mantle grid items-center rounded-xl shadow-lg md:grid-cols-[192px_1fr]"
-  in:blur={{ delay: delay + 100, duration: 400 }}
+  in:controlledBlur={{ delay: delay + 100, duration: 400 }}
 >
   <div class="bg-crust mr-6 hidden size-full overflow-hidden rounded-l-xl md:block">
     <img {src} {alt} class="size-full object-cover" />

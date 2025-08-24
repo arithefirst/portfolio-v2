@@ -1,6 +1,6 @@
 <script lang="ts">
+  import { controlledBlur } from '$lib/scripts/controlledBlur';
   import type { Snippet } from 'svelte';
-  import { blur } from 'svelte/transition';
   import { onMount } from 'svelte';
 
   interface Props {
@@ -16,7 +16,7 @@
 </script>
 
 {#if loaded}
-  <div in:blur={{ delay, duration }} class={className}>
+  <div in:controlledBlur={{ delay, duration }} class={className}>
     {@render children()}
   </div>
 {/if}
