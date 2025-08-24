@@ -103,6 +103,10 @@
   --color-card: var(--color-base);
   --color-card-foreground: var(--color-text);
 
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 1024px;
+
   /* Animations */
   --animate-blur: blur 15s linear infinite;
 
