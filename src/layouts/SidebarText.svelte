@@ -15,8 +15,6 @@
   onMount(() => {
     currSize = baseWidth;
   });
-
-  $inspect(currSize);
 </script>
 
 <h1 bind:clientWidth={h1} class="mx-auto mt-7 w-fit text-5xl">
