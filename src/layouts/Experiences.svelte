@@ -1,13 +1,5 @@
 <script lang="ts">
-  interface ExperienceCard {
-    startDate: Date;
-    endDate: Date;
-    company: string;
-    position: string;
-    bullets: string[];
-    src: string;
-    alt: string;
-  }
+  import type { ExperienceCard } from '$lib/scripts/types';
 
   import Experience from '$lib/components/Experience.svelte';
   import { onMount } from 'svelte';
@@ -25,7 +17,7 @@
         endDate={card.endDate}
         company={card.company}
         position={card.position}
-        bullets={card.bullets}
+        summary={card.summary}
         src={card.src}
         alt={card.alt}
         delay={i * 100}

@@ -7,6 +7,16 @@ export interface Link {
   overrideTarget?: boolean;
 }
 
+export interface ExperienceCard {
+  startDate: Date;
+  endDate: Date;
+  company: string;
+  position: string;
+  summary: string;
+  src: string;
+  alt: string;
+}
+
 export interface Page {
   title: string;
   href: string;

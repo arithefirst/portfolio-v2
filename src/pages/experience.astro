@@ -1,16 +1,7 @@
 ---
 import Experiences from '$lib/layouts/Experiences.svelte';
 import Layout from '$lib/layouts/Layout.astro';
-
-interface ExperienceCard {
-  startDate: Date;
-  endDate: Date;
-  company: string;
-  position: string;
-  bullets: string[];
-  src: string;
-  alt: string;
-}
+import type { ExperienceCard } from '$lib/scripts/types';
 
 const experienceArray: ExperienceCard[] = [
   {
@@ -18,11 +9,8 @@ const experienceArray: ExperienceCard[] = [
     endDate: new Date('May 1, 2025 EST'),
     company: 'Kingsway Indoor Percussion & Colorguard',
     position: 'Freelance Developer',
-    bullets: [
-      'Developed a software to track the locations of students on a 4-day field trip',
-      'Worked closely with staff & admin to make sure the solution worked properly',
-      'Recived praise for the speed at which a solution was able to be developed and deployed',
-    ],
+    summary:
+      'Developed and deployed a student location tracking software for a 4-day field trip, collaborating with staff and administration to ensure reliability and receiving praise for rapid delivery.',
     src: '/images/krsd.png',
     alt: 'kingsway school district logo',
   },
@@ -31,11 +19,8 @@ const experienceArray: ExperienceCard[] = [
     endDate: new Date(),
     company: 'Hikari3',
     position: 'Lead Developer (Volunteer)',
-    bullets: [
-      'Assisted in pioneering an imageboard software used by hundreds of people daily',
-      'Set up and repaired several imperative services for functionality and user satisfaction.',
-      'Implemented GitHub continous integration to improve developer experience.',
-    ],
+    summary:
+      'Led development of an imageboard platform serving hundreds daily, maintained critical services, and implemented GitHub CI to enhance developer workflow.',
     src: '/images/h3.webp',
     alt: 'the hikari3.ch logo',
   },

@@ -1,18 +1,12 @@
 <script lang="ts">
   import { controlledBlur } from '$lib/scripts/controlledBlur';
+  import type { ExperienceCard } from '$lib/scripts/types';
 
-  interface Props {
-    startDate: Date;
-    endDate: Date;
-    company: string;
-    position: string;
-    bullets: string[];
-    src: string;
-    alt: string;
+  interface Props extends ExperienceCard {
     delay: number;
   }
 
-  const { startDate, endDate, company, position, bullets, src, alt, delay }: Props = $props();
+  const { startDate, endDate, company, position, summary, src, alt, delay }: Props = $props();
   const dateOpts: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short' };
   const startDateShort = startDate.toLocaleDateString('en-US', dateOpts);
   const endDateShort = endDate.toLocaleDateString('en-US', dateOpts);
@@ -36,10 +30,8 @@
         {endDateShort === new Date().toLocaleDateString('en-US', dateOpts) ? 'Present' : endDateShort}
       {/if}
     </p>
-    <ul class="mt-2 list-inside list-disc text-sm text-gray-300">
-      {#each bullets as bullet}
-        <li>{bullet}</li>
-      {/each}
-    </ul>
+    <p class="mt-2 indent-4 text-gray-300 lg:max-w-3/4">
+      {summary}
+    </p>
   </div>
 </div>
