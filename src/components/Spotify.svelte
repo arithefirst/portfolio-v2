@@ -54,21 +54,21 @@
     <div class="relative flex h-20 w-full items-center">
       <div
         role="img"
-        class="absolute z-1 ml-2 aspect-square h-full cursor-pointer rounded-full"
+        class="absolute z-1 ml-2 aspect-square h-full rounded-full"
         onmouseenter={() => (isHovered = true)}
         onmouseleave={() => (isHovered = false)}
       >
-        <img
-          class="aspect-square h-full w-full rounded-full border border-black"
-          src={albumImage}
-          alt="Album cover for {title}"
-          style="rotate: {albumRotation}deg;"
-        />
+        <div class="container rounded-full shadow-md">
+          <img
+            class="aspect-square h-full w-full rounded-full border border-black"
+            src={albumImage}
+            alt="Album cover for {title}"
+            style="rotate: {albumRotation}deg;"
+          />
+        </div>
       </div>
 
-      <div
-        class="bg-base absolute flex h-16 w-full cursor-pointer flex-col justify-center rounded-md border border-black pr-2 pl-2"
-      >
+      <div class="bg-base absolute flex h-16 w-full flex-col justify-center rounded-md border border-black pr-2 pl-2">
         <div class="flex h-fit flex-col py-1 pl-22">
           <span class="text-text overflow-hidden leading-tight font-bold text-ellipsis whitespace-nowrap">{title}</span>
           <span class="text-subtext-1 overflow-hidden text-xs text-ellipsis whitespace-nowrap"
