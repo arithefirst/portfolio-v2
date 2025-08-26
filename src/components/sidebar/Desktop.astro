@@ -3,6 +3,7 @@ import Buttons from '$lib/components/sidebar/Buttons.astro';
 import Kitty from '$lib/images/kitty.png';
 import SidebarText from '$lib/layouts/SidebarText.svelte';
 import { Image } from 'astro:assets';
+import Spotify from '../Spotify.svelte';
 ---
 
 <nav class="bg-mantle hidden w-2/7 min-w-[380px] items-center md:flex">
@@ -14,6 +15,7 @@ import { Image } from 'astro:assets';
       loading="eager"
     />
     <SidebarText client:load transition:persist="sidebartext" />
-    <Buttons class="mt-28" />
+    <Spotify class="mt-6" client:load />
+    <Buttons class="mt-6" />
   </div>
 </nav>
