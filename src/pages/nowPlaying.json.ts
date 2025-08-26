@@ -1,3 +1,5 @@
+export const prerender = false;
+
 import type { LastFmErrorResponse, LastFmRecentTracksResponse } from '$lib/scripts/types';
 import type { APIRoute } from 'astro';
 
