@@ -17,4 +17,4 @@ Outside of tech, I'm a jazz saxophonist, specifically bari sax. Playing jazz has
 - Studying <abbr title="German">Deutsch</abbr> in hopes to one day become fluent
 - Occasionally playing video games like
   **Pokemon**, <br>
-  **Phasmophobia**, **Animal Crossing**, and others
+  **Dead by Daylight**, **Stardew Valley**, and others.
