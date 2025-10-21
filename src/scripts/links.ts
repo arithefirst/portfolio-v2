@@ -1,13 +1,13 @@
 import type { Link } from './types';
 
-import Amazon from '$lib/icons/amazon.svelte';
 import Bluesky from '$lib/icons/bluesky.svelte';
 import Discogs from '$lib/icons/discogs.svelte';
 import Discord from '$lib/icons/discord.svelte';
-import Mail from '$lib/icons/mail.svelte';
+import FileCert from '$lib/icons/file_cert.svelte';
+import Gift from '$lib/icons/gift.svelte';
 import GitHub from '$lib/icons/github.svelte';
 import Instagram from '$lib/icons/instagram.svelte';
-import FileCert from '$lib/icons/file_cert.svelte';
+import Mail from '$lib/icons/mail.svelte';
 import Signal from '$lib/icons/signal.svelte';
 import Spotify from '$lib/icons/spotify.svelte';
 import Steam from '$lib/icons/steam.svelte';
@@ -16,9 +16,9 @@ import Youtube from '$lib/icons/youtube.svelte';
 
 export const links: Link[] = [
   {
-    title: 'Amazon Wishlist',
-    href: 'https://www.amazon.com/hz/wishlist/ls/1F2RJS322A2NR?sort=price-asc',
-    icon: Amazon,
+    title: 'Wishlist',
+    href: 'https://mywishlist.online/w/56l7qx/aprils-wishlist',
+    icon: Gift,
   },
   {
     title: 'Bluesky',
@@ -81,4 +81,4 @@ export const links: Link[] = [
     href: 'https://youtube.com/@arithefirst_',
     icon: Youtube,
   },
-];
+].sort((a, b) => a.title.localeCompare(b.title));
